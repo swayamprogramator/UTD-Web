@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+
+
+        .Departments {
+    padding: 20px 10px;
+    background-color: #f5f5f5;
+    text-align: center;
+   
+}
+
+.Departments h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    
+    color: #010314;
+}
+
+.Departments .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.Departments .text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.Departments .text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.Departments button {
+    background-color: #011731;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.Departments button:hover {
+    background-color: #00509e;
+}
+
+.Departments .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.Departments .image img {
+    max-width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.Departments .image img:hover {
+    transform: scale(1.05);
+}
+.Department-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.Department-container h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.courses {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.courses img {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.courses h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #011731;
+    padding-bottom: 15px;
+}
+
+.courses p {
+    color: #555;
+}
+
+.courses:hover {
+    transform: translateY(-5px);
+}
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
+}
+footer {
+    background: #011731;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .social-media a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br />Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">B.Tech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="MTech_Faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">UTD Map</a>
+                    <div class="dropdown-content">
+                        <a href="Ground_floor.html">Ground Floor</a>
+                        <a href="Basement.html">Basement</a>
+                        <a href="First_floor.html">First Floor</a>
+                    </div>
+                </li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="Departments">
+        <h1>Ground Floor</h1>
+         <div class="Department-container">
+            <!-- <h2>CSVTU STORIES</h2> -->
+            <div class="container">
+
+
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Admission Cell</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Admission Cell.jpg'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Computer Lab</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Computer Lab.jpg'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>CSVTU Journal</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Computer Lab.jpg'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Exam cell</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Admission Cell.jpg'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Biomedical Engneering Lab</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Admission Cell.jpg'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Bioinformatics Lab</h3>
+                    <button onclick="window.location.href='Map/Ground-floor/Admission Cell.jpg'">Explore</button>
+                </div>
+               
+
+            </div>
+            <p class="note"><strong>NOTE:</strong>Follw the Blue Colour Path Line in the map to reach your destination.</p>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                <br>
+                <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                <br>
+                <a href="#"><img src="images/mail.png" alt="Mail"></a>
+            </div>
+        </div>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+<script>
+    // script.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Your JavaScript code goes here
+});
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === 'block') {
+                openDropdown.style.display = 'none';
+            }
+        }
+    }
+}
+
+</script>
+</body>
+</html>
