@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - University</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('images/hero.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .intro {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .contact-group {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-group h2 {
+            text-align: center;
+            color: white;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem 0;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            color: black;
+        }
+
+        .contact-section:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-section h3 {
+            margin-top: 0;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .contact-group {
+                width: 90%;
+            }
+
+            .contact-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="intro">
+            <h2>Welcome to Our University</h2>
+            <p>If you have any questions, feel free to reach out to the respective departments and higher officials listed below. We are here to help you with any inquiries you may have.</p>
+        </section>
+
+        <div class="contact-container">
+            <section class="contact-group" id="departments">
+                <h2>Departments</h2>
+                <div class="contact-section" id="support">
+                    <h3>Student Support</h3>
+                    <p>Email: studentenquiry@csvtu.ac.in</p>
+                    <p>Student Query & Resolution Cell: sqrc@csvtu.ac.in</p>
+                    <p>Phone: +91 788-2200062</p>
+                </div>
+                <div class="contact-section" id="exam">
+                    <h3>Exam Cell</h3>
+                    <p>Email: helpline@csvtu.ac.in</p>
+                    <p>Phone: +91-788-2445004, +91-9179841986 (Whatsapp only)</p>
+                    <p>Documents verify: verification@csvtu.ac.in</p>
+                </div>
+                <div class="contact-section" id="academics">
+                    <h3>Admission Enquiry</h3>
+                    <p>Phone: +91-788-2445021 (Academic Incharge)</p>
+                    <p>M. Tech: 7509983788, 9977889161, 7974139459</p>
+                    <p>M. Plan: 7587346604, 9752619666</p>
+                    <p>PG Diploma: 7987194705, 8962967233</p>
+                </div>
+                <div class="contact-section" id="it">
+                    <h3>Public Information Officer (RTI Cell)</h3>
+                    <p>Phone: 9630458076</p>
+                </div>
+                <div class="contact-section" id="finance">
+                    <h3>Finance Office</h3>
+                    <p>Chief Finance Officer: +91-788-2445006, 9584311365</p>
+                    <p>Assistant Finance Officer: +91-788-2445007, 8103021576</p>
+                </div>
+            </section>
+
+            <section class="contact-group" id="officials">
+                <h2>Higher Officials</h2>
+                <div class="contact-section" id="dean">
+                    <h3>Director, UTD, CSVTU</h3>
+                    <p>Phone: 9826431889</p>
+                </div>
+                <div class="contact-section" id="registrar">
+                    <h3>Registrar</h3>
+                    <p>Email: registrar@csvtu.ac.in</p>
+                    <p>Phone: +91-788-2445009</p>
+                    <p>Deputy Registrar: +91-788-2445228, 7400600111</p>
+                </div>
+            </section>
+            <section class="contact-group" id="officials">
+                <h2>Social Media Handles</h2>
+                <div class="contact-section" id="chancellor">
+                    <h3>Instagram Handles</h3>
+                    <p> <a href="https://www.instagram.com/csvtu_bhilai_official">csvtu_bhilai_official</a></p>
+                    <h3>Facebook Handles </h3>
+                    <p> <a href="https://www.facebook.com/profile.php?id=61555199235088">csvtu.bhilai</a></p>
+                    <h3>Linkedin Handle</h3>
+                    <p> <a href="https://www.linkedin.com/company/csvtu-bhilai">csvtu-bhilai</a></p>
+                  </div>
+                  
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>CHHATTISGARH SWAMI VIVEKANAND TECHNICAL UNIVERSITY</p>
+        <p>Newai, P.O.-Newai, District-Durg, Chhattisgarh, PIN-491107</p>
+        <p>Telephone: +91-788-2200062</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.contact-section');
+            
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', () => {
+                    section.style.transform = 'scale(1.05)';
+                    section.style.background = 'rgba(255, 255, 255, 0.9)';
+                });
+                
+                section.addEventListener('mouseleave', () => {
+                    section.style.transform = 'scale(1)';
+                    section.style.background = 'rgba(255, 255, 255, 0.8)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
