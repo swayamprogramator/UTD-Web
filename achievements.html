@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - CSVTU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+
+
+        }
+
+        header,
+        section,
+        footer {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        header {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 5px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo h3 {
+            font-size: medium;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        /* Reset some default browser styles */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Flexbox container for horizontal alignment */
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            /* border-bottom: 1px solid #ccc; */
+        }
+
+        /* Style each list item */
+        nav ul li {
+            position: relative;
+        }
+
+        /* Style for navigation links */
+        nav ul li a {
+            display: block;
+            padding: 15px 40px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: background-color 0.5s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Dropdown container */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Add some hover effects for main navigation links */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+
+        .container {
+            width: 80%;
+            border-radius: 30px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .achievement {
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+            width: 80%;
+            border-radius: 30px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .achievement h2 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .achievement p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .achievement-gallery {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        .achievement-img {
+            max-width: 48%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-img:hover {
+            transform: scale(1.05);
+        }
+
+
+
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background: #011731;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-links a {
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-media a img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 60px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-image {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            /* Ensure image fits within the modal */
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Black with a little bit see-through */
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Some Section */
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 87%;
+            max-width: 1000px;
+            border-radius: 30px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .main-img-section,
+        .thumbnails-section {
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #0056b3;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            /* Adjusted height */
+        }
+
+        .main-img-section {
+            flex: 3;
+            /* Increased flexibility for main image section */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .main-img {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .main-img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .thumbnails-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbnails img {
+            height: 60px;
+            /* Decreased height */
+            width: auto;
+            object-fit: cover;
+            /* Ensure the thumbnails cover their containers */
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .thumbnails img.active {
+            border-color: #007bff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br />Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="MTech_Faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Our Achievements</h1>
+
+            <div class="achievement" id="academic">
+                <h2>Academic Excellence</h2>
+                <div class="container2">
+                    <div class="main-img-section">
+                        <div class="main-img">
+                            <img id="mainImage" src="IMGS/Academics/img1.jpeg" alt="Main Image">
+                        </div>
+                    </div>
+                    <div class="thumbnails-section">
+                        <div class="thumbnails">
+                            <img src="IMGS/Academics/img1.jpeg" alt="Thumbnail 1" class="active">
+                            <img src="IMGS/Academics/img2.jpeg" alt="Thumbnail 2">
+                            <img src="IMGS/Academics/img3.jpeg" alt="Thumbnail 3">
+                            <img src="IMGS/Academics/img4.jpeg" alt="Thumbnail 4">
+                            <img src="IMGS/Academics/img5.jpeg" alt="Thumbnail 5">
+                            <img src="IMGS/Academics/img6.jpeg" alt="Thumbnail 6">
+                            <!-- <img src="IMGS/Academics/img7.jpeg" alt="Thumbnail 7"> -->
+                            <!-- <img src="IMGS/Academics/img8.jpeg" alt="Thumbnail 8">
+                            <img src="IMGS/Academics/img9.jpeg" alt="Thumbnail 9"> -->
+                        </div>
+                    </div>
+                </div>
+                <p>Our students have consistently ranked among the top performers in national examinations and
+                    university placements.</p>
+            </div>
+            <div class="achievement" id="sports">
+                <h2>Sports Achievements</h2>
+                <div class="container2">
+                    <div class="main-img-section">
+                        <div class="main-img">
+                            <img id="mainImage" src="IMGS/sports/img1.jpeg" alt="Main Image">
+                        </div>
+                    </div>
+                    <div class="thumbnails-section">
+                        <div class="thumbnails">
+                            <img src="IMGS/sports/img1.jpeg" alt="Thumbnail 1" class="active">
+                            <img src="IMGS/sports/img2.jpeg" alt="Thumbnail 2">
+                            <img src="IMGS/sports/img3.jpeg" alt="Thumbnail 3">
+                            <img src="IMGS/sports/img4.jpeg" alt="Thumbnail 4">
+                            <img src="IMGS/sports/img5.jpeg" alt="Thumbnail 5">
+                            <img src="IMGS/sports/img6.jpeg" alt="Thumbnail 6">
+                            <img src="IMGS/sports/img7.jpeg" alt="Thumbnail 7">
+                            <img src="IMGS/sports/img8.jpeg" alt="Thumbnail 8">
+                            <!-- <img src="Event_Images/imgp5.jpg" alt="Thumbnail 9"> -->
+                        </div>
+                    </div>
+                </div>
+                <p>We have won numerous championships in various sports including football, basketball, and track and
+                    field events.</p>
+            </div>
+            <!-- <div class="achievement" id="research">
+                <h2>Research Contributions</h2>
+                <div class="container2">
+                    <div class="main-img-section">
+                        <div class="main-img">
+                            <img id="mainImage" src="IMGS/Research/img 1.png" alt="Main Image">
+                        </div>
+                    </div>
+                    <div class="thumbnails-section">
+                        <div class="thumbnails">
+                            <img src="IMGS/Research/img 1.png" alt="Thumbnail 1" class="active">
+                            <img src="Event_Images/img3.jpeg" alt="Thumbnail 2">
+                            <img src="Event_Images/img4.jpeg" alt="Thumbnail 3">
+                            <img src="Event_Images/img5.jpeg" alt="Thumbnail 4">
+                            <img src="Event_Images/imgp1.jpg" alt="Thumbnail 5">
+                        </div>
+                    </div>
+                </div>
+                <p>Our faculty and students have published groundbreaking research in renowned journals and have
+                    presented at international conferences.</p>
+            </div> -->
+            <div class="achievement" id="community">
+                <h2>Community Service</h2>
+                <div class="container2">
+                    <div class="main-img-section">
+                        <div class="main-img">
+                            <img id="mainImage" src="IMGS/Social/img1.jpg" alt="Main Image">
+                        </div>
+                    </div>
+                    <div class="thumbnails-section">
+                        <div class="thumbnails">
+                            <img src="IMGS/Social/img2.jpg" alt="Thumbnail 1" class="active">
+                            <img src="IMGS/Social/img3.jpg" alt="Thumbnail 2">
+                            <!-- <img src="Event_Images/img4.jpg" alt="Thumbnail 3"> -->
+                            <img src="IMGS/Social/img63.jpg" alt="Thumbnail 62">
+                            <img src="IMGS/Social/img4.jpg" alt="Thumbnail 3">
+                            <img src="IMGS/Social/img5.jpg" alt="Thumbnail 4">
+                            <img src="IMGS/Social/img6.jpg" alt="Thumbnail 5">
+                            <img src="IMGS/Social/img7.jpg" alt="Thumbnail 6">
+                            <img src="IMGS/Social/img8.jpg" alt="Thumbnail 7">
+                            <img src="IMGS/Social/img9.jpg" alt="Thumbnail 8">
+                            <img src="IMGS/Social/img10.jpg" alt="Thumbnail 9">
+                            <img src="IMGS/Social/img11.jpg" alt="Thumbnail 10">
+                            <img src="IMGS/Social/img12.jpg" alt="Thumbnail 11">
+                            <img src="IMGS/Social/img13.jpg" alt="Thumbnail 12">
+                            <img src="IMGS/Social/img14.jpg" alt="Thumbnail 13">
+                            <img src="IMGS/Social/img15.jpg" alt="Thumbnail 14">
+                            <img src="IMGS/Social/img16.jpg" alt="Thumbnail 15">
+                            <img src="IMGS/Social/img17.jpg" alt="Thumbnail 16">
+                            <img src="IMGS/Social/img18.jpg" alt="Thumbnail 17">
+                            <img src="IMGS/Social/img19.jpg" alt="Thumbnail 18">
+                            <img src="IMGS/Social/img20.jpg" alt="Thumbnail 19">
+                            <img src="IMGS/Social/img21.jpg" alt="Thumbnail 20">
+                            <img src="IMGS/Social/img22.jpg" alt="Thumbnail 21">
+                            <img src="IMGS/Social/img23.jpg" alt="Thumbnail 22">
+                            <img src="IMGS/Social/img24.jpg" alt="Thumbnail 23">
+                            <img src="IMGS/Social/img25.jpg" alt="Thumbnail 24">
+                            <img src="IMGS/Social/img26.jpg" alt="Thumbnail 25">
+                            <img src="IMGS/Social/img27.jpg" alt="Thumbnail 26">
+                            <img src="IMGS/Social/img28.jpg" alt="Thumbnail 27">
+                            <img src="IMGS/Social/img29.jpg" alt="Thumbnail 28">
+                            <img src="IMGS/Social/img30.jpg" alt="Thumbnail 29">
+                            <img src="IMGS/Social/img31.jpg" alt="Thumbnail 30">
+                            <img src="IMGS/Social/img32.jpg" alt="Thumbnail 31">
+                            <img src="IMGS/Social/img33.jpg" alt="Thumbnail 32">
+                            <img src="IMGS/Social/img34.jpg" alt="Thumbnail 33">
+                            <img src="IMGS/Social/img35.jpg" alt="Thumbnail 34">
+                            <img src="IMGS/Social/img36.jpg" alt="Thumbnail 35">
+                            <img src="IMGS/Social/img37.jpg" alt="Thumbnail 36">
+                            <img src="IMGS/Social/img38.jpg" alt="Thumbnail 37">
+                            <img src="IMGS/Social/img39.jpg" alt="Thumbnail 38">
+                            <img src="IMGS/Social/img40.jpg" alt="Thumbnail 39">
+                            <img src="IMGS/Social/img41.jpg" alt="Thumbnail 40">
+                            <img src="IMGS/Social/img42.jpg" alt="Thumbnail 41">
+                            <img src="IMGS/Social/img43.jpg" alt="Thumbnail 42">
+                            <img src="IMGS/Social/img44.jpg" alt="Thumbnail 43">
+                            <img src="IMGS/Social/img45.jpg" alt="Thumbnail 44">
+                            <img src="IMGS/Social/img46.jpg" alt="Thumbnail 45">
+                            <img src="IMGS/Social/img47.jpg" alt="Thumbnail 46">
+                            <img src="IMGS/Social/img48.jpg" alt="Thumbnail 47">
+                            <img src="IMGS/Social/img49.jpg" alt="Thumbnail 48">
+                            <img src="IMGS/Social/img50.jpg" alt="Thumbnail 49">
+                            <img src="IMGS/Social/img51.jpg" alt="Thumbnail 50">
+                            <img src="IMGS/Social/img52.jpg" alt="Thumbnail 51">
+                            <img src="IMGS/Social/img53.jpg" alt="Thumbnail 52">
+                            <img src="IMGS/Social/img54.jpg" alt="Thumbnail 53">
+                            <img src="IMGS/Social/img55.jpg" alt="Thumbnail 54">
+                            <img src="IMGS/Social/img56.jpg" alt="Thumbnail 55">
+                            <img src="IMGS/Social/img57.jpg" alt="Thumbnail 56">
+                            <img src="IMGS/Social/img58.jpg" alt="Thumbnail 57">
+                            <img src="IMGS/Social/img59.jpg" alt="Thumbnail 58">
+                            <img src="IMGS/Social/img60.jpeg" alt="Thumbnail 59">
+                            <img src="IMGS/Social/img61.jpeg" alt="Thumbnail 60">
+                            <img src="IMGS/Social/img62.jpeg" alt="Thumbnail 61">
+                            
+                        </div>
+                    </div>
+                </div>
+                <p>We are committed to giving back to our community through various service projects and volunteer work.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+
+    <!-- Modal for Image Popup -->
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-image" alt="Modal Image">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Modal functionality
+            let modal = document.getElementById("myModal");
+            let modalImg = document.querySelector(".modal-image");
+            let images = document.querySelectorAll(".achievement-img, .thumbnails img");
+            let currentIndex;
+            let imageList = Array.from(images);
+
+            function openModal(index) {
+                modal.style.display = "flex"; /* Use flex for centering */
+                modalImg.src = images[index].src;
+                currentIndex = index;
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex === 0) ? imageList.length - 1 : currentIndex - 1;
+                modalImg.src = imageList[currentIndex].src;
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex === imageList.length - 1) ? 0 : currentIndex + 1;
+                modalImg.src = imageList[currentIndex].src;
+            }
+
+            images.forEach((img, index) => {
+                img.addEventListener("click", () => openModal(index));
+            });
+
+            document.querySelector(".close").onclick = closeModal;
+            document.querySelector(".prev").onclick = showPrev;
+            document.querySelector(".next").onclick = showNext;
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeModal();
+                } else if (event.key === "ArrowLeft") {
+                    showPrev();
+                } else if (event.key === "ArrowRight") {
+                    showNext();
+                }
+            });
+
+            // Thumbnail functionality
+            const sections = document.querySelectorAll('.achievement');
+
+            sections.forEach(section => {
+                const thumbnails = section.querySelectorAll('.thumbnails img');
+                const mainImg = section.querySelector('.main-img img');
+                let currentImageIndex = 0;
+
+                function changeImage(index) {
+                    mainImg.src = thumbnails[index].src;
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    thumbnails[index].classList.add('active');
+                }
+
+                function autoChangeImage() {
+                    currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
+                    changeImage(currentImageIndex);
+                }
+
+                changeImage(0);
+                setInterval(autoChangeImage, 4000);
+
+                thumbnails.forEach((thumbnail, index) => {
+                    thumbnail.addEventListener('click', () => {
+                        changeImage(index);
+                        currentImageIndex = index;
+                    });
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
