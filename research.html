@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - CSVTU</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Research</h2>
+            <p>Details about research activities and projects can be listed here.</p>
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td><img src="vision1.jpg" alt="Vision Image 1" width="100"></td>
+                    <td>Our vision is to lead the future of Computer Science and AI research.</td>
+                    <td><a href="details/vision1.html">View Details</a></td>
+                </tr>
+                <tr>
+                    <td><img src="vision2.jpg" alt="Vision Image 2" width="100"></td>
+                    <td>Innovation and research in Data Science.</td>
+                    <td><a href="details/vision2.html">View Details</a></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
