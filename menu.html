@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            display: flex;
+        }
+        .header {
+            background-color: #ffffff;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header nav {
+            display: flex;
+            flex-grow: 1;
+            justify-content: space-around;
+        }
+        .header nav a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .header nav a:hover {
+            background-color:#ffffff;
+            border-radius: 5px;
+        }
+        .content {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex: 1;
+        }
+        .column {
+            width: 22%;
+        }
+        .column h2 {
+            border-bottom: 2px solid #E87722;
+            padding-bottom: 10px;
+        }
+        .column a {
+            color: #000000;
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+        }
+        .column a:hover {
+            color: #E87722;
+        }
+        .footer {
+            background-color: #041E42;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        footer {
+            background: #001d3d;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        footer .footer-links a {
+            margin: 0 10px;
+            color: #fff;
+        }
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+        footer .social-media a img {
+            width: 30px;
+            margin: 0 10px;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+        <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+       
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Administration</a>
+            <a href="#">Students</a>
+            <a href="#">Parents</a>
+            <a href="#">Alumni</a>
+            <a href="#">Employees</a>
+        </nav>
+        <button onclick="window.location.href='index5.html'" class="close-btn" id="close-btn">&times;</button>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="column">
+                <h2>Academics</h2>
+                <a href="#">Office of the Provost</a>
+                <a href="#">Colleges</a>
+                <a href="#">Majors</a>
+                <a href="#">Core Curriculum</a>
+                <a href="#">Libraries</a>
+                <a href="#">Academic Calendar</a>
+                <a href="#">Course Schedule</a>
+                <a href="#">Advisement Schedule</a>
+                <a href="#">Final Exam Schedule</a>
+                <a href="#">Visit Academics</a>
+            </div>
+            <div class="column">
+                <h2>Admissions</h2>
+                <a href="#">Apply Now</a>
+                <a href="#">Check Application Status</a>
+                <a href="#">Undergraduate Admissions</a>
+                <a href="#">Graduate Admissions</a>
+                <a href="#">Pharmacy Admissions</a>
+                <a href="#">Veterinary Medicine Admissions</a>
+                <a href="#">Distance Ed</a>
+                <a href="#">Accepted Students</a>
+                <a href="#">Request Information</a>
+                <a href="#">Visit Admissions</a>
+            </div>
+            <div class="column">
+                <h2>Outreach</h2>
+                <a href="#">Public Service & Community Partnerships</a>
+                <a href="#">Professional & Continuing Education</a>
+                <a href="#">Youth Programs</a>
+                <a href="#">Government & Economic Development</a>
+                <a href="#">Osher Lifelong Learning Institute</a>
+                <a href="#">Faculty Engagement</a>
+                <a href="#">Outreach Global</a>
+                <a href="#">K-12 Outreach</a>
+                <a href="#">Extension</a>
+            </div>
+            <div class="column">
+                <h2>Research</h2>
+                <a href="#">Research Administration</a>
+                <a href="#">Work with Auburn Research</a>
+                <a href="#">Find Auburn Expertise</a>
+                <a href="#">Research Resources</a>
+                <a href="#">Centers & Institutes</a>
+                <a href="#">Graduate Research</a>
+                <a href="#">Undergraduate Research</a>
+                <a href="#">Auburn Research Magazine</a>
+                <a href="#">Research Symposia</a>
+                <a href="#">Visit Research</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+
+</body>
+</html>
