@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSVTU की प्रमुख विशेषताएं</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005a9c;
+            --secondary-color: #f0f0f0;
+            --text-color: #333;
+            --hover-color: #0077be;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .search-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        #search-input {
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px 0 0 5px;
+            transition: all 0.3s ease;
+        }
+        #search-input:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--primary-color);
+        }
+        #search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #search-button:hover {
+            background-color: var(--hover-color);
+        }
+        .feature {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .feature.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .feature h2 {
+            margin: 0;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .feature h2:hover {
+            color: var(--hover-color);
+        }
+        .feature-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .feature.active .feature-content {
+            max-height: 500px; /* Adjust this value based on your content */
+            transition: max-height 0.5s ease-in;
+        }
+        .detail-point {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .detail-point:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 5px 10px;
+            font-size: 14px;
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: var(--hover-color);
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            transform: scale(0.7);
+            transition: all 0.3s ease;
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>छत्तीसगढ़ स्वामी विवेकानंद तकनीकी विश्वविद्यालय (CSVTU)</h1>
+        <p>13 प्रमुख विशेषताएं</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="विशेषताओं में खोजें...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+    </div>
+
+    <div id="features-container"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        const features = [
+            {
+                title: "भारतीय तकनीकी शिक्षा सोसाइटी (ISTU) की स्थापना",
+                details: [
+                    "तकनीकी शिक्षा का राष्ट्रीय प्रतिनिधित्व",
+                    "नीति निर्माण में सहायता"
+                ]
+            },
+            {
+                title: "मानव रहित वायुयान (UAV) कार्यक्रम",
+                details: [
+                    "उन्नत UAV तकनीकों पर शोध",
+                    "ड्रोन पायलट प्रशिक्षण कार्यक्रम"
+                ]
+            },
+            {
+                title: "रिमोट पायलट प्रशिक्षण संगठन (RPTO)",
+                details: [
+                    "देश में पहला DGCA द्वारा मान्यता प्राप्त कार्यक्रम"
+                ]
+            },
+            {
+                title: "ई-पुस्तकालय",
+                details: [
+                    "ई-बुक्स के माध्यम से सतत् अद्यतन",
+                    "महत्वपूर्ण समय पर सहायता"
+                ]
+            },
+            {
+                title: "CSVTU-FORTE",
+                details: [
+                    "ग्रामीण प्रौद्योगिकी और उद्यमिता को बढ़ावा"
+                ]
+            },
+            {
+                title: "समावेशी-प्रौद्योगिकी व्यावसायिक इनक्यूबेटर (i-TBI)",
+                details: [
+                    "20000 वर्ग फुट का कार्यक्षेत्र",
+                    "सीड फंडिंग",
+                    "50+ विशेषज्ञों द्वारा मार्गदर्शन"
+                ]
+            },
+            {
+                title: "उद्यमिता केंद्र (CoE)",
+                details: [
+                    "युवाओं को उन्नत और उद्यमी बनाना",
+                    "15 करोड़ रुपये का वित्तपोषण",
+                    "स्टार्टअप यूनिट्स की स्थापना"
+                ]
+            },
+            {
+                title: "स्वामी विवेकानंद युवा कौशल सेतु (SVYKS)",
+                details: [
+                    "कौशल विकास कार्यक्रम",
+                    "अनुसूचित जनजाति प्रमाणन"
+                ]
+            },
+            {
+                title: "48 गांवों को गोद लेने की पहल",
+                details: [
+                    "ग्रामीण स्कूली बच्चों में तकनीकी शिक्षा के प्रति रुचि",
+                    "जागरूकता शिविर का आयोजन"
+                ]
+            },
+            {
+                title: "स्कूल शिक्षा मित्र",
+                details: [
+                    "ग्रामीण छात्रों के लिए संपूर्ण सहायता",
+                    "छात्रवृत्ति योजनाओं की जानकारी"
+                ]
+            },
+            {
+                title: "कैंपस में बहुराष्ट्रीय कंपनी",
+                details: [
+                    "Nucleus Teq के साथ 'लाइव प्रोजेक्ट' पर व्यावहारिक अनुभव",
+                    "उन्नत तकनीकी कौशल का विकास"
+                ]
+            },
+            {
+                title: "ऑडियो विजुअल स्टूडियो",
+                details: [
+                    "600+ MOOCs लेक्चर्स की रिकॉर्डिंग",
+                    "उच्च-गुणवत्ता वाली डिजिटल सामग्री की वैश्विक उपलब्धता"
+                ]
+            },
+            {
+                title: "सुपरकंप्यूटर की उपलब्धता",
+                details: [
+                    "परम उत्कर्ष सुपरकंप्यूटर का उपयोग",
+                    "विश्व स्तरीय अनुसंधान परियोजनाओं के लिए उपलब्धता"
+                ]
+            }
+        ];
+
+        const featuresContainer = document.getElementById('features-container');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementsByClassName('close')[0];
+
+        function createFeatureElement(feature, index) {
+            const featureElement = document.createElement('div');
+            featureElement.classList.add('feature');
+            featureElement.innerHTML = `
+                <h2>
+                    ${index + 1}. ${feature.title}
+                    <button class="btn view-details">विस्तार देखें</button>
+                </h2>
+                <div class="feature-content">
+                    ${feature.details.map(detail => `<div class="detail-point">${detail}</div>`).join('')}
+                </div>
+            `;
+
+            const viewDetailsButton = featureElement.querySelector('.view-details');
+            viewDetailsButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showModal(feature);
+            });
+
+            featureElement.querySelector('h2').addEventListener('click', () => {
+                featureElement.classList.toggle('active');
+            });
+
+            return featureElement;
+        }
+
+        function renderFeatures(featuresToRender) {
+            featuresContainer.innerHTML = '';
+            featuresToRender.forEach((feature, index) => {
+                const featureElement = createFeatureElement(feature, index);
+                featuresContainer.appendChild(featureElement);
+                setTimeout(() => {
+                    featureElement.classList.add('visible');
+                }, index * 100);
+            });
+        }
+
+        function showModal(feature) {
+            modalTitle.textContent = feature.title;
+            modalContent.innerHTML = feature.details.map(detail => `<div class="detail-point">${detail}</div>`).join('');
+            modal.style.display = 'block';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+
+        closeModal.onclick = function() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal.onclick();
+            }
+        }
+
+        searchButton.addEventListener('click', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredFeatures = features.filter(feature => 
+                feature.title.toLowerCase().includes(searchTerm) || 
+                feature.details.some(detail => detail.toLowerCase().includes(searchTerm))
+            );
+            renderFeatures(filteredFeatures);
+        });
+
+        renderFeatures(features);
+    </script>
+</body>
+</html>
