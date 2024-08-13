@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header,
+        section,
+        footer {
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        header {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 5px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo h3 {
+            font-size: medium;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        /* Reset some default browser styles */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Flexbox container for horizontal alignment */
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            /* border-bottom: 1px solid #ccc; */
+        }
+
+        /* Style each list item */
+        nav ul li {
+            position: relative;
+        }
+
+        /* Style for navigation links */
+        nav ul li a {
+            display: block;
+            padding: 15px 40px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: background-color 0.5s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Dropdown container */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Add some hover effects for main navigation links */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .main-content {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .main-content h2 {
+            color: #003366;
+        }
+
+        .newsletter {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .newsletter:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .newsletter h3 {
+            color: #0f0c9e;
+            margin: 0 0 10px 0;
+        }
+
+        .newsletter-content {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .newsletter-content p {
+            margin: 0;
+        }
+
+        .newsletter-content .download {
+            margin-top: 5px;
+            color: #130b2e;
+            text-decoration: underline;
+        }
+
+        .newsletter-content .download:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .newsletter a {
+            text-decoration: none;
+            color: #070430;
+        }
+
+        .newsletter a:hover {
+            text-decoration: underline;
+        }
+
+        .newsletters-about p:hover {
+            text-decoration: wavy;
+            cursor: default;
+        }
+
+        .newsletters-about h2 {
+            color: #0f0c9e;
+        }
+
+        .newsletters-about h2:hover {
+            cursor: default;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-links a {
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        footer .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-media a img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br />Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h2>About The Newsletter</h2>
+        <div class="newsletters-about">
+            <h2 style="text-align: center;">PRAVAAH</h2>
+            <p style="font-size: 20px; text-align: center;">A Digital Newsletter Of University Teaching Department of
+                Chhattisgarh Swami Vivekanand Technical University, Which covers News Of Each and Every Event held at
+                the Campus.<br>This Newsletter is being Established on May 3rd, 2023 in the presence of honourable Vice
+                Chancellor sir, Respected Pro Vice Chancellor sir, All Teaching Faculty Staffs and All The Newsletter
+                Members.<br>This Newsletter is Published in all over the India, Emphasing the Technological Development
+                in the Field of Computer Science and Other Aspects as well.</p>
+        </div>
+        <h2>Newsletters of UTD</h2>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' March 2024</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/11.pdf" target="_blank">Newsletter - 'Pravaah' March (12th Edition) 2023<br>3rd
+                        March 2024</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' October 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/09.pdf" target="_blank">Newsletter - 'Pravaah' October (9th Edition)
+                        2023<br>10th October 2023</a></p>
+                <p><a href="Newsletters/10.pdf" target="_blank">Newsletter - 'Pravaah' October (10th Edition)
+                        2023<br>28th October 2023</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' September 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/08.pdf" target="_blank">Newsletter - 'Pravaah' September (8th Edition)
+                        2023<br>18th September 2023</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' August 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/06.pdf" target="_blank">Newsletter - 'Pravaah' August (6th Edition) 2023<br>1st
+                        August 2023</a></p>
+                <p><a href="Newsletters/07.pdf" target="_blank">Newsletter - 'Pravaah' August (7th Edition) 2023<br>21st
+                        August 2023</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' July 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/05.pdf" target="_blank">Newsletter - 'Pravaah' July (5th Edition) 2023<br>10th
+                        July 2023</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' June 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/03.pdf" target="_blank">Newsletter - 'Pravaah' June (3rd Edition) 2023<br>8th
+                        June 2023</a></p>
+                <p><a href="Newsletters/04.pdf" target="_blank">Newsletter - 'Pravaah' June (4th Edition) 2023<br>28th
+                        June 2023</a></p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>Newsletter 'Pravaah' May 2023</h3>
+            <div class="newsletter-content">
+                <p><a href="Newsletters/01.pdf" target="_blank">Newsletter - 'Pravaah' May (1st Edition) 2023<br>3rd May
+                        2023</a></p>
+                <p><a href="Newsletters/02.pdf" target="_blank">Newsletter - 'Pravaah' May (2nd Edition) 2023<br>16th
+                        May 2023</a></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                <br>
+                <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                <br>
+                <a href="#"><img src="images/mail.png" alt="Mail"></a>
+            </div>
+        </div>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const newsletters = document.querySelectorAll('.newsletter');
+            newsletters.forEach(newsletter => {
+                const header = newsletter.querySelector('h3');
+                header.addEventListener('click', function () {
+                    const content = newsletter.querySelector('.newsletter-content');
+                    content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
