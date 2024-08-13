@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B. Tech | Computer Science & Engineering</title>
+    <link rel="stylesheet" href="Btech.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+.hero {
+    position: relative;
+    width: 100%;
+    max-width:  100%;
+    height: 500px;
+    overflow: hidden;
+   
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero:hover .hero-image {
+    transform: scale(1.05);
+    transition: transform 3s ease;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ece7e7;
+    padding: 20px;
+    border-radius: 5px;
+    
+    
+}
+
+.hero-text h4 {
+    margin: 0;
+    
+    color: #ffffff;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    color: #fffcfc;
+}
+.header-image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 20px auto; /* Adjust margin as needed */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    animation: slideInRight 1s forwards; /* Animation declaration */
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.015); /* Scale the image on hover */
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-info {
+    display: flex;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.course-info:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* transition: transform 0.3s ease; */
+}
+
+/* .image-container img:hover {
+    transform: scale(1.05);
+} */
+
+.course-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.course-details h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.course-details p:first-of-type {
+    font-weight: bold;
+}
+
+
+.specializations {
+    text-align: center;
+    width: 100%;
+}
+
+.specializations h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.specialization-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.specialization {
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.specialization img {
+    width: 100%;
+    height: 300px;
+}
+
+.specialization p {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.specialization:hover {
+    transform: scale(1.05);
+}
+
+.peos {
+    display: flex;
+    align-items: center;
+    background-color: #0c2035;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.peos:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.peos-content {
+    flex: 1;
+    color: white;
+}
+
+.peos-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.peos-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.peos-content li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.peos-content .checkmark {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.peos-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.peos-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.programme-outcome {
+    background-color: #0c3f75;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.programme-outcome:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.programme-outcome h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-outcome ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-outcome li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-outcome li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+.programme-sf {
+    background-color: #0c2035;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.programme-sf h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-sf ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-sf li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-sf li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.curriculum {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.curriculum h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.year-buttons {
+   
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.year-buttons button {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 7px 15px;
+    font-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.year-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.syllabus {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.syllabus h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.syllabus h4 {
+    font-size: 24px;
+    margin-bottom: -70px;
+    text-align: center;
+}
+
+.semesters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+}
+
+.syllabus ul {
+    list-style: none;
+    padding: 80px;
+}
+
+.syllabus li {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.download-btn {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+.scheme {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.eligibility-criteria {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.eligibility-criteria h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.eligibility-criteria p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.fee-structure {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fee-structure h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fee-structure table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.fee-structure table th, 
+.fee-structure table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.fee-structure table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.fee-structure table td {
+    font-size: 18px;
+}
+
+.view-btn {
+    background-color: #011731;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
+}
+.key-features {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.key-features:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.key-features h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.key-features ul {
+    list-style:decimal;
+    padding: 0;
+}
+
+.key-features li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+footer {
+    background: #011731;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .social-media a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="header-image-container">
+        <img src="images/MPlan_Urbanplanning.png" alt="Image" class="header-image">
+        
+    </div>
+    <main>
+        <section class="course-info">
+            <div class="image-container">
+                <img src="images/Btech.webp" alt="Laptop">
+            </div>
+            <div class="course-details">
+                <h3>M.Plan | Urban Planning</h3>
+                <p>DURATION : 2 YRS. (4 SEMESTERS)</p>
+                <p>
+                    The urban planning department was started at the Chhattisgarh Swami Vivekanand Technical University, Bhilai, in the year 2017. In the year 2018, the department was housed in its own independent building and premises. The Department has the singular distinction of being the first in the Chhattisgarh in instituting a master degree course in Urban planning (M.Plan.) 2019.
+                    A dynamic profession that works to improve the welfare of people and their communities by creating more convenient equitable, healthy, efficient, sustainable, and attractive places for the present and future generations. To plan a city or urban area it requires multi-layered understanding of the factors that influence the places where we live, work and use. Master of Urban Planning (MUP) allows students’ exposure to national and international best-practices in urban planning and equips them with knowledge and skills necessary for their professional careers in planning and managing growth and development of urban areas, cities and regions.
+                </p>
+                <p style="font-weight: bold;">University is commencing M.Tech from 2020-21. The nomenclature of the degree are as follows:</p>
+                <ul>
+                    <li>M.Plan in Urban Planning – 18 Seats</li>
+                </ul>
+            </div>
+        </section>
+        <section class="peos">
+            <div class="peos-content">
+                <h2>Facilities available</h2>
+                <ul>
+                    <li>
+                        
+The research hub of CSVTU hence provide GIS equipped with the latest professional software like ERDAS Geomedia, and ArcGIS, which is basically digital image processing software mainly used for study and analysis of satellite imagery, GeoMedia used for working with and conducting analysis on geographic information, also Workstation for technical applications with 3D glass with Topo mouse is available in research hub.
+
+                    </li>
+                </ul>
+            </div>
+            <div class="peos-image">
+                <img src="images/Btech.webp" alt="Laptop">
+            </div>
+        </section>
+        <section class="programme-sf">
+            <h2>Salient Features of Programme</h2>
+            <ul>
+                <li>Study Tours / Visits:
+                    <br>
+                    • Study tours are an integral part of curriculum with visitation of urban planning and prominent area which provides maximum exposure to learn about technicalities of Urban planning. City visits and field surveys in various urban regions provides a unique opportunity for interaction with society and city planners.
+                    </li>
+                <li>Software Skills:
+                    <br>
+                    • Modern professional software like ArcGIS, Erdas, Geomedia is used while analyzing and designing for urban development issues.
+                    </li>
+                <li>Industry Immersion:
+                    <br>
+                    • The course incorporates specific industry-oriented subjects like Master planning, Area Planning, inclusive housing strategies, environmental management, transportation planning etc.
+                    </li>
+                <li>Research Orientation:
+                    <br>
+                    • Professional as critical thinker for problem solving through design and allied research pertaining to social, economic, environmental issues in terms of tangible and intangible aspects.
+                    </li>
+                <li>Competitive Examinations:
+                    <br>
+                    • Deals with contents which are must know for GATE examination in architecture and planning
+                    </li>
+                <li>Thrust Areas:
+                    <br>
+                    1.	Housing environment and planning
+                    <br>
+                    2.	Socio-economic basis for planning
+                    <br>
+                    3.	Sustainable sanitation system for Indian cities
+                    <br>
+                    4.	City and Metropolitan planning
+                    <br>
+                    5.	Infrastructure planning
+                    <br>
+                    6.	Transportation planning
+                    <br>
+                    7.	Urban heritage conservation
+                    <br>
+                    8.	Project planning and management
+                    <br>
+                    9.	Urban development and management
+                    <br>
+                    10.	Urban governance
+                    <br>
+                    11.	Legal issues and professional practice.
+                    <br>
+                </li>
+            </ul>
+        </section>
+        <!-- <section class="course-info">
+            <li>    Future Prospects:
+                <ul>1.Career in Government Sector
+                    <ul>
+                        <table>
+                            <tr>
+                                <th>Name of Post</th>
+                                <th>Place</th>
+                                <th>Through</th>
+                            </tr>
+                            <tr>
+                                <td>Assistant Town Planner</td>
+                                <td>TCPO</td>
+                                <td>CGPSC</td>
+                            </tr>
+                            <tr>
+                                <td>Planning Officer</td>
+                                <td>TCPO</td>
+                                <td>CGPSC</td>
+                            </tr>
+                            <tr>
+                                <td>Planning Officer</td>
+                                <td>DDA</td>
+                                <td>Direct Interview / written exam</td>
+                            </tr>
+                            <tr>
+                                <td>GIS Analyst</td>
+                                <td>GIS/RS Department</td>
+                                <td>Direct Interview / written exam</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </ul>
+                                
+                <ul>2. Career in Private sector
+                    <ul>
+                        <table>
+                            <tr>
+                                <th>Name of Post </th>	
+                                <th>Place </th>
+                                <th>Through </th>
+                            </tr>
+                            <tr>
+                                <td>Urban planner </td>
+                                <td>Sai Consultancy </td>	
+                                <td>Direct Interview / written exam.</td>
+                            </tr>
+                            <tr>
+                                <td>Urban planner</td>	
+                                <td>CRISIL Limited	</td>
+                                <td>Direct Interview / written exam.</td>
+                            </tr>
+                            <tr>
+                                <td>Urban planner</td>
+                                <td>	AECOM India Pvt. Ltd</td>
+                                <td>	Direct Interview / written exam.</td>
+                            </tr>
+                            <tr>
+                                <td>Urban planner</td>
+                                <td>	WAPCOS LTD</td>
+                                <td>	Direct Interview / written exam.</td>
+                            </tr>
+                            <tr>
+                                <td>Urban planner</td>
+                                <td>	WSP</td>
+                                <td>	Direct Interview / written exam.</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </ul>
+                <ul>3. Higher Education
+                    <ul>
+                        <p>Institutes for Higher Education </p>
+                        <p>Department of Architecture and Planning in all IIT’s and NIT’s </p>
+                        <p>Department of Planning in Selected Private Institutions affiliated with ITPI </p>
+                    </ul>
+                </ul>
+            </li>
+        </section> -->
+        <section class="curriculum">
+            <h2>CURRICULUM</h2>
+            <div class="year-buttons">
+                <button onclick="showSyllabus('first-year')">1st Year</button>
+                <button onclick="showSyllabus('second-year')">2nd Year</button>
+              
+            </div>
+            <div class="syllabus" id="first-year">
+                <h3>1st Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>1st Semester</strong> <a href="Syllabus/mplan(urban)/1_Sem_Mplan.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Introduction to Planning History and Theory</li>
+                        <li>Urban Economics and Sociology</li>
+                        <li> Planning Techniques </li>
+                        <li>Demography & Quantitative Methods</li>
+                        <li>Geo Informatics in Planning</li>
+                        <li>Elective-I</li>
+                        <li>Planning Studio-I</li>
+                        <li>Geo Informatics in Planning Lab</li>
+                
+                    </ul>
+                    <ul>
+                        <li><strong>2nd Semester</strong> <a href="Syllabus/mplan(urban)/2_Sem_Mplan.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li> City & Metropolitan Planning</li>
+                        <li>Planning Practices and Legislation</li>
+                        <li>Infrastructure Planning </li>
+                        <li>Urban Management and Governance</li>
+                        <li>Project Formulation and Management</li>
+                        <li>Elective-II</li>
+                        <li>Planning Project-II</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="second-year" style="display:none;">
+                <h3>2nd Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>3rd Semester</strong> <a href="Syllabus/mplan(urban)/3_4_Sem_Mplan.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Technical Writing</li>
+                        <li>Thesis Programming</li>
+                        <li>Training(Summer)</li>
+                        
+                       
+                    </ul>
+                    <ul>
+                        <li><strong>4th Semester</strong> <a href="Syllabus/mplan(urban)/3_4_Sem_Mplan.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Thesis Project</li>
+                        
+                       
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="scheme"><strong>M.Tech in Urban Planning 
+                Scheme: </strong> <a href="Syllabus/mplan(urban)/Syllabus_Scheme_Combined.pdf" class="download-btn" target="_blank">View PDF</a></p>
+           
+        </section>
+        <section class="eligibility-criteria">
+            <h2>ELIGIBILITY CRITERIA</h2>
+            <p>Duration: 2 yrs. The Candidates should have passed Senior Secondary (10+2) or an equivalent Examination in five subjects taken together including compulsory subjects of Physics, Mathematics and one subject of Chemistry/ Biotechnology/ Biology/ Computer Science & English with 60% marks in aggregate (40% marks in the case of SC/ ST Category). Or Passed Diploma examination with at least 60% marks (40% in case of candidates belonging to reserved category), subject to vacancies in the First Year, in case the vacancies at lateral entry are exhausted.</p>
+        </section>
+        <section class="fee-structure">
+            <h2>Fee Structure</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Semester</th>
+                        <th>Total Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st Semester</td>
+                        <td>30000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2nd Semester</td>
+                        <td>30000.00</td>
+                    </tr>
+                    <tr>
+                        <td>3rd Semester</td>
+                        <td>30000.00</td>
+                    </tr>
+                    <tr>
+                        <td>4th Semester</td>
+                        <td>30000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>120000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!--
+        <section class="key-features">
+            <h2>KEY FEATURES</h2>
+            <ul>
+                <li>Real Life Industry Projects</li>
+                <li>Personalised Mentorship & Doubt-Solving Support</li>
+                <li>Specialisation Certificates</li>
+                <li>Making Students Industry Ready</li>
+                <li>Complimentary Python Programming Bootcamp</li>
+                <li>One-on-One with Industry Mentors</li>
+                <li>Career Essential Soft Skills Program</li>
+                <li>Job Assistance with Top Firms</li>
+            </ul>
+        </section>
+    -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                    <br>
+                    <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                    <br>
+                    <a href="#"><img src="images/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+            <p>Contact us at enquiry@csvtu.ac.in</p>
+        </footer>
+    
+    </main>
+   
+    <script>
+        function showSyllabus(id) {
+     // Hide all syllabus divs
+     var syllabuses = document.querySelectorAll('.syllabus');
+     syllabuses.forEach(function(syllabus) {
+         syllabus.style.display = 'none';
+     });
+ 
+     // Display the selected syllabus
+     var selectedSyllabus = document.getElementById(id);
+     if (selectedSyllabus) {
+         selectedSyllabus.style.display = 'block';
+     }
+ }
+ 
+     </script>
+</body>
+</html>
