@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculties</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+        /* Additional styles for faculty cards and view more button */
+        .faculty-section {
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .faculty-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #010314;
+        }
+
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .faculty-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card img {
+            width: 100%;
+            height:350px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .faculty-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #011731;
+            padding-bottom: 10px;
+        }
+
+        .faculty-card p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .view-more-btn {
+            background-color: #011731;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .view-more-btn:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Faculty sections with view more buttons -->
+    <section class="faculty-section">
+        <h1>Department of Microelectronics and VLSI (M.Tech)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Amit%20Sing%20Rajput.jpeg" alt="Dr. Amit Singh Rajput">
+                <h3>Dr. AMIT SINGH RAJPUT</h3>
+                <p>Associate Professor</p>
+                <h4>Head of Department (Microelectronics and VLSI)</h4>
+                <p>Qualifications: M.Tech(VLSI),Ph.D</p>
+                <p>Contact No: +91-9202241541  </p>
+                <p>E-mail: 0915.ec@gmail.com</p>
+                <p>Specialization / Area of Interest: Low-Power VLSI Design, SRAM</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Shivangi%20Chandrakar.jpg" alt="Mrs. Shivangi Chandrakar">
+                <h3>Mrs. SHIVANGI CHANDRAKAR</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: M.Tech(VLSI Design), Ph.D, Ongoing (Topic TSV in 3D IC)</p>
+                <p>Contact No: +91-7869135921  </p>
+                <p>E-mail: shivi.chandrakar05@gmail.com</p>
+                <p>Specialization / Area of Interest: Signal integrity analysis of TSV-bump-RDL-based 3-D ICs </p>
+            </div>  
+        </div>
+
+        <h1>Department of Urban Planning (M.Plan)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Vandana%20Chandrakar..jpg" alt="Mrs. VANDANA CHANDRAKAR">
+                <h3>Mrs. VANDANA CHANDRAKAR</h3>
+                <p>Assistant Professor</p>
+                <h4>Head of Department (Urban Planning)</h4>
+                <p>Qualifications: B.Arch, M.Plan</p>
+                <p>Contact No: +91-7999825707  </p>
+                <p>E-mail: head_urbanplan@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Tourism, Housing, Urban Sociology</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Lakshya.jpg" alt="Mr. LAKSHYA JAIN">
+                <h3>Mr. LAKSHYA JAIN</h3>
+                <p>Associate Professor</p>
+                <p>Qualifications: M.Plan(Urban Planning), B.Arch</p>
+                <p>Contact No: +91-8770725650  </p>
+                <p>E-mail: faculty3_mup@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Urban Planning, Urban Water Management, Urban Demography, Sustainable Planning, Housing </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Vivek%20Garg.jpg" alt="Mr. VIVEK GARG">
+                <h3>Mr. VIVEK GARG</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: M.Plan(Urban Planning), B.E(Civil Engineering)</p>
+                <p>Contact No: +91-9039987199  </p>
+                <p>E-mail: faculty2_mup@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Housing and Community Planning, Sustainable Construction, Disaster Resilience, Urban Environmental Management, Urban Infrastructure Planning, Spatial Planning </p>
+            </div>  
+        </div>
+         <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+        <h1>Department of Energy and Environmental Engineering (M.Tech)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="faculty1.jpg" alt="Dr. HARISH KUMAR GHRITLAHRE">
+                <h3>Dr. HARISH KUMAR GHRITLAHRE</h3>
+                <p>Assistant Professor</p>
+                <h4>Head of Department (Energy and Environmental Engineering)</h4>
+                <p>Qualifications: B.E(GEC Jagdalpur), M.Tech(NIT Raipur), Ph.D(NIT Jamshedpur)</p>
+                <p>Contact No: +91-9406020587  </p>
+                <p>E-mail: harish.ghritlahre@gmail.com</p>
+                <p>Specialization / Area of Interest: Renewable Engergy, Solar Dryer, Solar Energy, Solar Thermal Application, Power Plant, Artifical Neural Network</p>
+            </div>
+            <div class="faculty-card">
+                <img src="faculty1.jpg" alt="Mrs. PURVI CHANDRAKAR">
+                <h3>Mrs. PURVI CHANDRAKAR</h3>
+                <p>Associate Professor</p>
+                <p>Qualifications: B.Tech(Electrical Engineering) MANIT Bhopal, M.E(Electrical Engineering) University of Houston,Houston,Texas, M.E(Petroleum Engineering) University of Houston,Houston,Texas</p>
+                <p>Contact No: +91-9174635135  </p>
+                <p>E-mail: purvi.enev@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Power and Control Systems, Supply Chain Management, Engineering Administration, Integrated Reservoir Characterization, Petroleum Fluid Properties, Reservoir Engineering, Petroleum Producation Operations, Energy Systems </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="faculty1.jpg" alt="Mr. SAMARTH PRAKASH SAXENA">
+                <h3>Mr. SAMARTH PRAKASH SAXENA</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: M.Tech(Power Systems), B.E(Electrical Engineering)</p>
+                <p>Contact No: +91-9862744591 </p>
+                <p>E-mail: samarth.enev@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Renewable Energy Integration, Electrical Vehicle Charging Infrastructure, Virtual Machines, Renewable Dominant Electric Grid, Solar Photovoltaic and Solar Thermal </p>
+            </div>  
+        </div>
+         <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+        <h1>Department of Structural Engineering (M.Tech)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019…timizer_GAURAV%20-%20Gaurav%20Kumar%20Agrawal.jpg" alt="Mr. GAURAV KUMAR AGRAWAL">
+                <h3>Mr. GAURAV KUMAR AGRAWAL</h3>
+                <p>Assistant Professor</p>
+                <h4>Head of Department (Structural Engineering)</h4>
+                <p>Qualifications: B.E(Honors) Civil Engineering, SSGIFET Bhaili, M.Tech(Structural Engineering) MANIT Bhopal</p>
+                <p>Contact No: +91-7509983788  </p>
+                <p>E-mail: head_structuralengg@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Structural Dynamics, Earthquake, Bridges, Finite Element Analysis, Structural Analysis & Optimization, Concrete Technology</p>
+            </div>
+            <div class="faculty-card">
+                <img src="	https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Vivek%20Kumar%20Mishra.jpg" alt="Mr. VIVEK KUMAR MISHRA">
+                <h3>Mr. VIVEK KUMAR MISHRA</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: B.Tech, M.Tech, Ph.D(Pursuing)</p>
+                <p>Contact No: +91-7000249178  </p>
+                <p>E-mail: vivekmishra@csvtu.ac.in , Faculty1_str@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Structural Engineering, Composite Materials, Earthquake Engineering, Concrete Technology </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/jpeg-optimizer_PANKAJ%20KUMAR%20SWARNKAR.JPG" alt="Mr. PANKAJ KUMAR SWARNKAR">
+                <h3>Mr. PANKAJ KUMAR SWARNKAR</h3>
+                <p>Associate Professor</p>
+                <p>Qualifications: B.Tech (Civil Engineering) NIT Raipur (2014-2018), M.Tech(Structural Engineering) IIT Bhubaneshwar(2018-2020)</p>
+                <p>Contact No: +91-9174452014 </p>
+                <p>E-mail: pswarnkar97@gmail.com</p>
+                <p>Specialization / Area of Interest: Structural Mechanics, Composite Structures, Continuum Theories of Beams, Plate and Shell Structures </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019…optimizer_photo%20malathy%20-%20Malathy%20RB.jpeg" alt="Dr. R.B. MALATHY">
+                <h3>Dr. R.B. MALATHY</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: Ph.D</p>
+                <p>Contact No: +91-9425267776 </p>
+                <p>E-mail: malathybr@gmail.com</p>
+                <p>Specialization / Area of Interest: Dynamics of Structures, Structural Health Monitoring, Statistical Singal Processing, Machine Learning </p>
+            </div>  
+        </div>
+         <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+        <h1>Department of Biomedical and Bioinformatics Engineering (M.Tech)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019…r%20Pankaj%20Kumar%20Mishra%20CSVTU%20Bhilai.jpeg" alt="Dr. PANKAJ KUMAR MISHRA">
+                <h3>Dr. PANKAJ KUMAR MISHRA</h3>
+                <p>Professor</p>
+                <h4>Head of Department (Biomedical & Bioinformatics)</h4>
+                <p>Qualifications: Ph.D</p>
+                <p>Contact No: +91-9826143288 </p>
+                <p>E-mail: pankaj.bme@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Signal Processing</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Rohit%20Kumar%20Miri.jpg" alt="Mr. ROHIT KUMAR MIRI">
+                <h3>Mr. ROHIT KUMAR MIRI</h3>
+                <p>Associate Professor</p>
+                <p>Qualifications: B.E(CSE), M.Tech(Computer Engineering), Ph.D(Computer Science and Engineering), UGC-NET, GATE-2006</p>
+                <p>Contact No: +91-7000256173  </p>
+                <p>E-mail: rohitmiri@gmail.com</p>
+                <p>Specialization / Area of Interest: Machine Learning and Data Science </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="	https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Dr.%20R.G.%20Brajesh.jpeg" alt="Dr. R.G. BRAJESH">
+                <h3>Dr. R.G. BRAJESH</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: B.Tech (Biotechnology) NIT Raipur, M.Tech(Biotechnology) Anna University, Ph.D(Chemical Engineering) IIT Bombay, Post-Doc(Computational Biology), Virginia Tech, Virginia State, U.S.</p>
+                <p>Contact No: +91-9174452014 </p>
+                <p>E-mail: pswarnkar97@gmail.com</p>
+                <p>Specialization / Area of Interest: Structural Mechanics, Composite Structures, Continuum Theories of Beams, Plate and Shell Structures </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Dr.%20Reecha%20-%20Reecha%20Sahu.jpg" alt="Dr. REECHA SAHU">
+                <h3>Dr. REECHA SAHU</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: Ph.D</p>
+                <p>Contact No: +91-7969219694 </p>
+                <p>E-mail: reechasahu@gmail.com</p>
+                <p>Specialization / Area of Interest: Biomaterials, Nanotechnology, Bioinformatics </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/TKS.png" alt="Dr. THANESHWAR KUMAR SAHU">
+                <h3>Dr. THANESHWAR KUMAR SAHU</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: Ph.D, B.E. , M.Tech, Ph.D(Pursuing)</p>
+                <p>Contact No: +91-9165527714 </p>
+                <p>E-mail: thaneshwar.sahu@gmail.com</p>
+                <p>Specialization / Area of Interest: Biomedical Signal Analysis, Signal Processing, Biomedical Instrumentation </p>
+            </div>  
+        </div>
+         <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+        <h1>Department of Environmental and Water Resources Engineering (M.Tech)</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Manish%20Sinha.jpg" alt="Dr. MANISH KUMAR SINHA">
+                <h3>Dr. MANISH KUMAR SINHA</h3>
+                <p>Assistant Professor</p>
+                <h4>Head of Department (Environmental and Water Resources Engineering)</h4>
+                <p>Qualifications: B.E(Civil Engineering), M.Tech(WRD&IE) NIT Raipur, Ph.D, RWTH Aachen University, Germany</p>
+                <p>Contact No: +91-9584216188 </p>
+                <p>E-mail: manishsinha200389@gmail.com</p>
+                <p>Specialization / Area of Interest: Urban Hydrology & Water Management, Surface and Groundwater Hydrology, Hydrological modelling, Remote Sensing & GIS applications for Water Resources and Geosciences</p>
+            </div>
+            <div class="faculty-card">
+                <img src="https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/.Sandhya%20Ganwer%20CSVTU.jpg" alt="Miss. SANDHYA GANWER">
+                <h3>Miss. SANDHYA GANWER</h3>
+                <p>Associate Professor</p>
+                <p>Qualifications: M.Tech(Environmental & Water Resources Engineering)</p>
+                <p>Contact No: +91-7089073408  </p>
+                <p>E-mail: sganwer@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Groundwater Hydrology </p>
+            </div>  
+            <div class="faculty-card">
+                <img src="	https://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/_Nikhil%20Ghodichore.jpg" alt="Mr. NIKHIL KUMAR">
+                <h3>Mr. NIKHIL KUMAR</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: M.Tech</p>
+                <p>Contact No: +91-7795409495 </p>
+                <p>E-mail: faculty1_ewre@csvtu.ac.in</p>
+                <p>Specialization / Area of Interest: Land surface modelling, climate change </p>
+            </div>  
+        </div>
+        <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+    </section>
+
+    
+
+    <script>
+        // JavaScript logic for "View More" button
+        const facultiesPerPage = 4;
+
+        function handleViewMore(section) {
+            const container = document.getElementById(`${section}-faculty-container`);
+            const facultyCards = container.querySelectorAll('.faculty-card');
+            const viewMoreBtn = document.getElementById(`${section}-view-more-btn`);
+
+            let visibleCount = facultiesPerPage;
+            facultyCards.forEach((card, index) => {
+                if (index < visibleCount) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            viewMoreBtn.addEventListener('click', () => {
+                visibleCount += facultiesPerPage;
+                facultyCards.forEach((card, index) => {
+                    if (index < visibleCount) {
+                        card.style.display = 'block';
+                    }
+
+                    if (visibleCount >= facultyCards.length) {
+                        viewMoreBtn.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initial setup
+            if (facultyCards.length <= facultiesPerPage) {
+                viewMoreBtn.style.display = 'none';
+            }
+        }
+
+        handleViewMore('btech');
+        handleViewMore('diploma');
+        // Add more sections as needed
+
+    </script>
+</body>
+</html>
