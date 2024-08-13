@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Teaching Department</title>
+    <link rel="icon" href="logos/csvtu.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="content">
+    <div id="alertNotice" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img src="Banners/admission_banner.png" alt="Banner Image" style="width: 80%; height: auto;">
+    </div>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br />Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">B.Tech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">UTD Map</a>
+                    <div class="dropdown-content">
+                        <a href="Ground_floor.html">Ground Floor</a>
+                        <a href="Basement.html">Basement</a>
+                        <a href="First_floor.html">First Floor</a>
+                    </div>
+                </li>
+                <li><a href="Features.html">Unique Features</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="Banners/csctu_admin.JPG" alt="Auburn at Work" class="hero-image">
+        <div class="hero-text">
+            <h4>"Arise! Awake! and stop not until the goal is reached."</h4>
+            <p>-Swami Vivekananda</p>
+        </div>
+    </section>
+    <section class="welcome-section">
+        <h2>Welcome to University Teaching Department (CSVTU)</h2>
+        <p>Empowering future leaders in Computer Science Engineering.</p>
+        <a href="#departments" class="btn-primary">Explore Programs</a>
+        <!--  <a href="https://csvtu.ac.in/ew/university-teaching-departmentprograms-and-schemes/" class="btn-secondary">Apply
+            Now</a>-->
+    </section>
+
+    <section class="quick-links">
+        <div class="link-item">
+            <a href="Academic calender/Academic_Calender.pdf"><img src="images/calendar.png"
+                    alt="Academic Calendar"></a>
+            <a href="Academic calender/Academic_Calender.pdf">Academic Calendar</a>
+        </div>
+        <div class="link-item">
+            <a href="alumini.html"><img src="images/mortarboard.png" alt="Alumni"></a>
+            <a href="alumini.html">Alumini</a>
+        </div>
+        <div class="link-item">
+            <a href="newsletter.html"><img src="images/Newsletter.png" alt="Newsletter"></a>
+            <a href="newsletter.html">Newsletter</a>
+        </div>
+        <div class="link-item">
+            <a href="clubs.html"><img src="images/Clubs.png" alt="Clubs"></a>
+            <a href="clubs.html">Clubs</a>
+        </div>
+        <!-- <div class="link-item">
+            <img src="images/working.png" alt="Working for UTD">
+            <a href="">Working For CSVTU</a>
+        </div> -->
+    </section>
+
+    <section class="vision">
+        <h1>Vision / Mission and Goals</h1>
+        <div class="content">
+            <div class="text">
+                <p>To be a premier institution fostering ethically sound engineers and professionals who lead in diverse
+                    fields, both nationally and internationally. We aim to address societal demands through innovation,
+                    research, and excellence in education across various engineering and planning disciplines.</p>
+                <p>Our mission is to provide world-class education, foster cutting-edge research, and offer professional
+                    consultancy and training across all our departments. We strive to develop skilled professionals
+                    equipped with the knowledge and ethical values necessary to excel in their careers and make
+                    significant contributions to society.</p>
+                <!-- <button onclick="window.location.href='vision.html'">Learn more</button> -->
+            </div>
+            <div class="image">
+                <img src="images/vision2.jpg" alt="UTD at Work">
+            </div>
+        </div>
+    </section>
+    <section class="Departments" id="departments">
+        <h1>Programs Offered (UG)</h1>
+        <div class="Department-container">
+            <!-- <h2>CSVTU STORIES</h2> -->
+            <div class="container">
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>B.Tech(Hons.) Computer Science Engineering</h3>
+                    <button onclick="window.location.href='Btech.html'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>B.Tech(Hons.) Civil Engineering</h3>
+                    <button onclick="window.location.href='civilug.html'">Explore</button>
+                </div>
+
+
+            </div>
+    </section>
+
+    <section class="Departments">
+        <h1>Programs Offered (Diploma)</h1>
+        <div class="Department-container">
+            <!-- <h2>CSVTU STORIES</h2> -->
+            <div class="container">
+
+
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Diploma in Mining Engneering</h3>
+                    <button onclick="window.location.href='Diploma-mining.html'">Explore</button>
+                </div>
+                <div class="courses">
+                    <!-- <img src="story1.jpg" alt="Story 1"> -->
+                    <h3>Diploma in Industrial Safety & Fire Safety Engineering</h3>
+                    <button onclick="window.location.href='Diploma-Industry-fire.html'">Explore</button>
+                </div>
+
+            </div>
+    </section>
+
+    <section class="Departments">
+        <h1>Programs Offered (PG)</h1>
+        <div class="container">
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>M.Tech Structural Engineering</h3>
+                <button onclick="window.location.href='civilpg.html'">Explore</button>
+            </div>
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>M.Tech Micro Electronics & VLSI</h3>
+                <button onclick="window.location.href='microelectronics&vlsi.html'">Explore</button>
+            </div>
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>M.Tech Environmental & Water Resource Engineering </h3>
+                <button onclick="window.location.href='environmental&water.html'">Explore</button>
+            </div>
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>Master of Planning ( Urban Planning )</h3>
+                <button onclick="window.location.href='urbanPlanning.html'">Explore</button>
+            </div>
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>M.Tech Bio-medical Engineering & Bio-informatics</h3>
+                <button onclick="window.location.href='biomedical.html'">Explore</button>
+            </div>
+
+            <div class="courses">
+                <!-- <img src="story1.jpg" alt="Story 1"> -->
+                <h3>M.Tech Energy & Environmental Engineering</h3>
+                <button onclick="window.location.href='energy&environmental.html'">Explore</button>
+            </div>
+        </div>
+    </section>
+    <section class="Forte">
+        <h1>Empowering Rural Development Through Innovation</h1>
+        <div class="content">
+            <div class="text">
+                <p>The CSVTU Foundation for Rural Technology and Entrepreneurship (CSVTU-FORTE) is a Section-8 Company (formed under Act -18, of the Companies Act-2013) working under the aegis of CSVTU is dedicated to fostering technological advancements and entrepreneurial ventures in
+                    rural areas.</p>
+
+                <a href="https://www.csvtuforte.com/" class="btn-primary">Explore</a>
+            </div>
+            <div class="image">
+                <img src="images/CSVTU Forte.jpg" alt="UTD at Work">
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="planning-impact">
+        <h1>PLANNING FOR FUTURE IMPACT</h1>
+        <div class="content">
+            <div class="text">
+                <p>Since 2020, we’ve put knowledge and discovery to work for long-term impact. To help define our key goals and aspirations, and to position UTD for continued success over the next decade, we’ve launched a strategic planning process. Visit our Strategic Planning website to track our progress and see how you can get involved.</p>
+                <button onclick="window.location.href='planning.html'">Learn more</button>
+            </div>
+            <div class="image">
+                <img src="images/CSVTUBG.jpg" alt="Planning for Future Impact">
+                
+            </div>
+        </div>
+    </section> -->
+
+    <section class="csvtu-stories">
+        <h2>CSVTU STORIES</h2>
+        <div class="story-grid">
+            <div class="story" style="height: auto;">
+                <img src="IMGS/Stories/ICECCT.jpeg" alt="Story 1">
+                <h3>The ICECCT Conference</h3>
+                <p>CSVTU-UTD Held a successfull ICECCT Conference.</p>
+                <div>
+                    <button class="myButton" data-popup="popup1" aria-controls="popup1"
+                        aria-haspopup="dialog1">View-story</button>
+                </div>
+            </div>
+            <div class="story" style="height: auto;">
+                <img src="images/admin_building.jpg" alt="Story 2">
+                <h3>Reaching new heights</h3>
+                <p>Achievements of CSVTU-UTD.</p>
+                <div>
+                    <button class="myButton" data-popup="popup2" aria-controls="popup2"
+                        aria-haspopup="dialog2">View-story</button>
+                </div>
+            </div>
+            <div class="story" style="height: auto;">
+                <img src="IMGS/Stories/Cultural event.JPG" alt="Story 3">
+                <h3>Cultural Event</h3>
+                <p>Our college hosted a Cultural Event for ICECCT-2024.</p>
+                <div>
+                    <button class="myButton" data-popup="popup3" aria-controls="popup3"
+                        aria-haspopup="dialog3">View-story</button>
+                </div>
+            </div>
+            <div class="story" style="height: auto;">
+                <img src="IMGS/Stories/National Seminar.jpeg" alt="Story 3">
+                <h3>राष्ट्रीय संगोष्ठी।</h3>
+                <p>CSVTU-UTD में दो दिवसीय राष्ट्रीय संगोष्ठी का आयोजन किया गया।</p>
+                <div>
+                    <button class="myButton" data-popup="popup4" aria-controls="popup4"
+                        aria-haspopup="dialog4">View-story</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="csvtu-achievements">
+        <h2>Our Achievements</h2>
+        <div class="story-grid">
+            <div class="story">
+                <img src="IMGS/Academics/img6.jpeg" alt="Academic">
+                <p>Academic</p>
+                <a href="achievements.html#academic" class="view-more">View More</a>
+            </div>
+            <div class="story">
+                <img src="IMGS/sports/img7.jpeg" alt="Sports">
+                <p>Sports</p>
+                <a href="achievements.html#sports" class="view-more">View More</a>
+            </div>
+            <div class="story">
+                <img src="IMGS/Research/img 1.png" alt="Research and Innovation">
+                <p>Research and Innovation</p>
+                <a href="achievements.html#research" class="view-more">View More</a>
+            </div>
+            <div class="story">
+                <img src="IMGS/Social/img17.jpg" alt="Community Services">
+                <p>Community Services</p>
+                <a href="achievements.html#community" class="view-more">View More</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+            <p>"The programs at CSVTU have been life-changing. The faculty is supportive and the curriculum is
+                rigorous."</p>
+            <p>- Prabhat Singh from Btech (Hons.) in CSE(AI)</p>
+        </div>
+        <div class="testimonial">
+            <p>"I am proud to be a part of CSVTU's faculty. The environment here fosters growth and innovation."</p>
+            <p>- Faculty Name</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Address: Newai, P.O. Newai, District: Durg, Chhattisgarh - 491107, India</p>
+        <p>Director Phone: +91-982-643-1889</p>
+        <p>Email: info@csvtu.ac.in</p>
+
+        <div id="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.356956410944!2d81.36105537532586!3d21.13818818053858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29249845000007%3A0xae9660fbcd26d492!2sChhattisgarh%20Swami%20Vivekanand%20Technical%20University!5e0!3m2!1sen!2sin!4v1720263950457!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+
+            </iframe>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                <br>
+                <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                <br>
+                <a href="#"><img src="images/mail.png" alt="Mail"></a>
+            </div>
+        </div>
+        <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+        <p>Contact us at enquiry@csvtu.ac.in</p>
+    </footer>
+
+    <!-- the popups -->
+    <div id="popup1" class="popup" aria-labelledby="popupTitle1" aria-describedby="popupDescription1">
+
+        <div class="card" style="margin:8% auto; height: 550px; width: 400px;">
+            <div class="img" style="width: auto;">
+                <img src="IMGS/Stories/ICECCT.jpeg" alt="My Image">
+            </div>
+            <span>ICECCT Conference</span>
+            <p class="info">
+                ICECCT 2024 🌟
+                <br>
+                On June 26, 2024, CSVTU-UTD hosted the prestigious ICECCT 2024 conference, a global gathering of
+                innovators and thought leaders in electrical, computer, and communication technologies.
+                <br>
+                The inaugural function was graced by esteemed guests, including Prof. Bansidhar Majhi, Vice
+                Chancellor of VSSUT, and representatives from IEEE and industry experts.
+                <br>
+                The event sparked insightful discussions, networking, and knowledge sharing, solidifying CSVTU-UTD's
+                reputation as a hub for technological excellence.
+                <br>
+                The success of ICECCT 2024 marked a milestone in the university's journey, inspiring future
+                generations to shape the world through innovation and collaboration.
+            </p>
+            <div class="share">
+                <a href="https://www.facebook.com/share/p/gPDdGumMHHQ6DCFE/">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50"  fill="currentColor">
+                        <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/p/C9HCtjON7eL/?igsh=djY4eHFweGFvbDN3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/live/G_EKWwZ16gY?si=7SXzWJHQ0vcFZ9lI">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- <button id="closeButton">Close</button> -->
+
+    </div>
+
+    <div id="popup2" class="popup" aria-labelledby="popupTitle2" aria-describedby="popupDescription2">
+        <div class="card" style="margin: 9% auto; height: 500px; width: 400px;">
+            <div class="img" style="width: auto;">
+                <img src="images/admin_building.jpg" alt="My Image">
+            </div>
+            <span>Achievements of CSVTU - UTD 🌟</span>
+            <p class="info">
+                <br>
+                📍 Accreditation and Rankings: Recognized for quality education and research excellence.
+                <br>
+                📚 Research and Innovation: Strong focus on research with numerous publications and international
+                presentations.
+                <br>
+                🏢 Infrastructure Development: State-of-the-art labs, libraries, and facilities.
+                <br>
+                🤝 Industry Collaboration: Partnerships leading to collaborative projects, internships, and
+                placements.
+                <br>
+                🏆 Student Achievements: Awards and recognition in national competitions.
+                <br>
+                🌍 Community Engagement: Active involvement in community service and regional development.
+                <br>
+                👨‍🏫 Faculty Development: Continuous skill enhancement through workshops and training programs.
+            </p>
+
+            <!-- <div class="share">
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path
+                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path
+                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                            viewBox="0 0 48 48">
+                            <path
+                                d="M36.5,6h-25C8.468,6,6,8.468,6,11.5v25c0,3.032,2.468,5.5,5.5,5.5h25c3.032,0,5.5-2.468,5.5-5.5v-25	C42,8.468,39.532,6,36.5,6z M18,34c0,0.553-0.447,1-1,1h-3c-0.553,0-1-0.447-1-1V21c0-0.553,0.447-1,1-1h3c0.553,0,1,0.447,1,1V34z M15.5,18c-1.381,0-2.5-1.119-2.5-2.5c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5C18,16.881,16.881,18,15.5,18z M35,34	c0,0.553-0.447,1-1,1h-3c-0.553,0-1-0.447-1-1v-7.5c0-1.379-1.121-2.5-2.5-2.5S25,25.121,25,26.5V34c0,0.553-0.447,1-1,1h-3	c-0.553,0-1-0.447-1-1V21c0-0.553,0.447-1,1-1h3c0.553,0,1,0.447,1,1v0.541C26.063,20.586,27.462,20,29,20c3.309,0,6,2.691,6,6V34z">
+                            </path>
+                        </svg>
+                    </a>
+                </div> -->
+        </div>
+        <!-- <button id="closeButton">Close</button> -->
+    </div>
+
+    <div id="popup3" class="popup" aria-labelledby="popupTitle3" aria-describedby="popupDescription3">
+        <div class="card" style="margin: 8.5% auto; height: 530px; width: 380px;">
+            <div class="img" style="width: auto;">
+                <img src="IMGS/Stories/Cultural event.JPG" alt="My Image">
+            </div>
+            <span>ICECCT-2024 Cultural Night</span>
+            <p class="info">
+                ICECCT 2024 🌟
+                <br>
+                Day 1,2: June 26,27 2024 📅
+                <br>
+                📍 Location: Kala Mandir Civic Center, Bhilai
+                <br>
+                🎉 Day 1:
+                <br>
+                <!-- 🌟 Chief Guest: Prof. Bansidhar Majhi, Vice Chancellor, Veer Surendra Sai University Of Technology
+                    (VSSUT,Formerly UCE), Burla, Odisha. -->
+                On day 1, Our college students performed various cultural activities like dance, music, drama, etc.
+                <br>
+                🎉 Day 2:
+                <br>
+                On Day 2, we enjoyed two extravagant performances by Shri Debanjan Bhattacharya and Nidhi Rawal ji.
+                <br>
+                The day was filled with vibrant cultural activities, including dance, music, and more, adding to the
+                lively atmosphere of the conference.
+                <br>
+                🎓 Esteemed Guests: Shri Hemant Verma (CSERC), Prof. Geetam Tomar (IEEE Madhya Pradesh Section),
+                Prof. Dr.Saad Mekhilef (Swinburne University), Mr. Anirban Dasgupta (BSP).
+            </p>
+            <!-- <div class="share">
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path
+                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
+                        </path>
+                    </svg>
+                </a>
+            </div> -->
+        </div>
+        <!-- <button id="closeButton">Close</button> -->
+    </div>
+    
+    <div id="popup4" class="popup" aria-labelledby="popupTitle4" aria-describedby="popupDescription1">
+        <div class="card" style="margin:8% auto; height: 550px; width: 400px;">
+            <div class="img" style="width: auto;">
+                <img src="IMGS/Stories/National Seminar.jpeg" alt="My Image">
+            </div>
+            <span>दो दिवसीय राष्ट्रीय संगोष्ठी |</span>
+            <p class="info">
+                    छत्तीसगढ़ स्वामी विवेकानंद तकनीकी विश्वविद्यालय (CSVTU) में दो दिवसीय राष्ट्रीय संगोष्ठी का आयोजन किया गया। इस संगोष्ठी का आयोजन विज्ञान और प्रौद्योगिकी क्षेत्र में भारतीय भाषाओं के उपयोग को बढ़ावा देने के लिए किया गया था।
+                    <br>
+                    "भारतीय भाषाओं में वैज्ञानिक शब्दावली के साथ आधुनिक तकनीकी शिक्षा का संबंध" विषय पर आयोजित इस संगोष्ठी में मुख्य अतिथि प्रो. बलदेव भाई शर्मा और विशिष्ट अतिथि प्रो. गिरीश नाथ झा ने अपने विचार साझा किए। 
+                    <br>
+                    मुख्य संरक्षक प्रो. एम. के. वर्मा के मार्गदर्शन में यह आयोजन अत्यंत प्रेरणादायक रहा।
+            </p>
+            <div class="share">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7216305986217631744" >
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50" fill="currentColor">
+                        <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+                    </svg>
+                </a>
+                <!-- <a href="https://www.instagram.com/p/C9HCtjON7eL/?igsh=djY4eHFweGFvbDN3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                        </path>
+                    </svg>
+                </a> -->
+                <a href="https://youtu.be/iSCGGvrtz7U">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-youtube" viewBox="0 0 16 16">
+                        <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            
+        </div>
+        <button id="closeButton">Close</button>
+    </div>
+</div>
+<div id="mobile-message" style="display: none;">
+    <p>This website is best viewed on a desktop. Please switch to desktop mode for a better experience.</p>
+</div>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.myButton').forEach(button => {
+            button.addEventListener('click', () => {
+                const popupId = button.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.closeButton').forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.popup').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            document.querySelectorAll('.popup').forEach(popup => {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+        function closePopup() {
+    var popup = document.getElementById('alertNotice');
+    popup.style.display = 'none';
+}
+
+// Optional: Show the popup initially
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById('alertNotice');
+    popup.style.display = 'block'; // Display the popup initially
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth < 768) {
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('mobile-message').style.display = 'block';
+    }
+});
+
+    </script>
+</body>
+
+</html>
