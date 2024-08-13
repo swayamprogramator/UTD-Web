@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: url('images/admin_building.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 5px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .logo h3 {
+            font-size: medium;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 70px;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 40px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: background-color 0.5s;
+        }
+
+        nav ul li a:hover {
+            background-color: #f9f9f9;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #010181;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.5);
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: #010181;
+            color: white;
+        }
+
+        td:hover {
+            background-color: #f9f9f9;
+        }
+
+        .accordion {
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+        }
+
+        .accordion:hover {
+            background-color: #f1f1f1;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            th,
+            td {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br />Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>University Admission Details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Courses Offered</th>
+                    <th>Seat Configuration</th>
+                    <th>Eligibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Btech Computer Science Engineering</td>
+                    <td>Artificial Intelligence & Data Science: 90 seats each</td>
+                    <td>Senior Secondary (10+2) with Physics, Mathematics, and one subject of Chemistry/Biotechnology/Biology/Computer Science & English with 60% marks (40% for SC/ST) or Diploma with 60% marks (40% for reserved category)</td>
+                </tr>
+                <tr>
+                    <td>Btech Civil Engineering</td>
+                    <td>60 seats</td>
+                    <td>Senior Secondary (10+2) with Physics, Mathematics, and one subject of Chemistry/Biotechnology/Biology/Computer Science & English with 60% marks (40% for SC/ST) or Diploma with 60% marks (40% for reserved category)</td>
+                </tr>
+                <tr>
+                    <td>Diploma in Mining Engineering</td>
+                    <td>60 seats</td>
+                    <td>Senior Secondary (10+2) with Physics, Mathematics, and one subject of Chemistry/Biotechnology/Biology/Computer Science & English with 60% marks (40% for SC/ST) typically between ages 16 to 21</td>
+                </tr>
+                <tr>
+                    <td>Diploma in Industrial Safety & Fire Safety Engineering</td>
+                    <td>60 seats</td>
+                    <td>Senior Secondary (10+2) with Physics, Mathematics, and one subject of Chemistry/Biotechnology/Biology/Computer Science & English with 60% marks (40% for SC/ST) typically between ages 16 to 21</td>
+                </tr>
+                <tr>
+                    <td>M.Tech Structural Engineering</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+                <tr>
+                    <td>M.Tech Micro Electronics & VLSI</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+                <tr>
+                    <td>M.Tech Environmental & Water Resource Engineering</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+                <tr>
+                    <td>Master of Planning (Urban Planning)</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+                <tr>
+                    <td>M.Tech Bio-medical Engineering & Bio-informatics</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+                <tr>
+                    <td>M.Tech Energy & Environmental Engineering</td>
+                    <td>18 seats</td>
+                    <td>Undergraduate degree in relevant field with 60% marks (40% for SC/ST)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.querySelectorAll('.accordion').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+
+                button.classList.toggle('active');
+
+                if (button.classList.contains('active')) {
+                    panel.style.maxHeight = panel.scrollHeight + 'px';
+                } else {
+                    panel.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
