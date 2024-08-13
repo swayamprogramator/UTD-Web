@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B. Tech | Computer Science & Engineering</title>
+    <link rel="stylesheet" href="Btech.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    max-width:  100%;
+    height: 500px;
+    overflow: hidden;
+   
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero:hover .hero-image {
+    transform: scale(1.05);
+    transition: transform 3s ease;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ece7e7;
+    padding: 20px;
+    border-radius: 5px;
+    
+    
+}
+
+.hero-text h4 {
+    margin: 0;
+    
+    color: #ffffff;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    color: #fffcfc;
+}
+.header-image-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 20px auto; /* Adjust margin as needed */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    animation: slideInRight 1s forwards; /* Animation declaration */
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-image:hover {
+    transform: scale(1.015); /* Scale the image on hover */
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-info {
+    display: flex;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.course-info:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    /* transition: transform 0.3s ease; */
+}
+
+/* .image-container img:hover {
+    transform: scale(1.05);
+} */
+
+.course-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.course-details h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.course-details p:first-of-type {
+    font-weight: bold;
+}
+.vision-mission {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            text-align: center;
+            
+        }
+
+        .vision-mission h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            
+        }
+
+        .vision-mission ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vision-mission ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+
+/* .specializations {
+    text-align: center;
+    width: 100%;
+}
+
+.specializations h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.specialization-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.specialization {
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.specialization img {
+    width: 100%;
+    height: 300px;
+}
+
+.specialization p {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.specialization:hover {
+    transform: scale(1.05);
+} */
+
+.peos {
+    display: flex;
+    align-items: center;
+    background-color: #0c2035;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.peos:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+.peos-content {
+    flex: 1;
+    color: white;
+}
+
+.peos-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.peos-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.peos-content li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.peos-content .checkmark {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.peos-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.peos-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.programme-outcome {
+    background-color: #0c3f75;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+.programme-outcome:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.programme-outcome h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-outcome ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-outcome li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-outcome li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+.programme-sf {
+    background-color: #0c2035;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.programme-sf h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.programme-sf ul {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-sf li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.programme-sf li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.curriculum {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.curriculum h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.year-buttons {
+   
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.year-buttons button {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 7px 15px;
+    font-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.year-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.syllabus {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.syllabus h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.syllabus h4 {
+    font-size: 24px;
+    margin-bottom: -70px;
+    text-align: center;
+}
+
+.semesters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -100px;
+}
+
+.syllabus ul {
+    list-style: none;
+    padding: 80px;
+}
+
+.syllabus li {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.download-btn {
+    background-color: #011731;
+    color: white;
+    border: solid;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+.scheme {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.eligibility-criteria {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.eligibility-criteria h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.eligibility-criteria p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.message {
+    width: 100%;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.message h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.fee-structure {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.fee-structure h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.fee-table {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; /* Enable horizontal scroll for smaller screens */
+    padding-bottom: 25px;
+}
+
+.fee-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fee-table table th,
+.fee-table table td {
+    padding: 12px;
+    text-align: center;
+    border: 1.5px solid #ddd; /* Light gray border */
+}
+
+.fee-table table thead {
+    background-color: #011731; /* Dark blue background for table header */
+    color: white;
+}
+
+.fee-table table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background */
+}
+.view-btn {
+    background-color: #011731;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: bold;
+}
+.key-features {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+.key-features:hover {
+    /* background-color: #e9e9e9e5; */
+    transform: scale(1.015);
+}
+
+
+.key-features h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.key-features ul {
+    list-style:decimal;
+    padding: 0;
+}
+
+.key-features li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+footer {
+    background: #011731;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer .social-media a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="header-image-container">
+        <img src="Banners/BTech_Civil.png" alt="Image" class="header-image">
+        
+    </div>
+    <main>
+        <section class="course-info">
+            <div class="image-container">
+                <img src="images/Diploma.webp" alt="Laptop">
+            </div>
+            <div class="course-details">
+                <h3>B.Tech Civil Engineering  </h3>
+                <p>DURATION : 4 YRS. (8 SEMESTERS)</p>
+                <p>The Department of Civil Engineering at University Teaching Department, CSVTU, Bhilai 
+                    offers comprehensive undergraduate (B.Tech.) and postgraduate (M.Tech.) programs. Our 
+                    curriculum, aligned with the Chhattisgarh Swami Vivekananda Technical University 
+                    (CSVTU), Bhilai syllabus, covers critical aspects of civil engineering, including the planning, 
+                    design, construction, and management of infrastructure projects.
+                    Our well-qualified and experienced faculty members deliver high-quality education and foster 
+                    a supportive learning environment. Their expertise spans various specializations, providing 
+                    students with a broad and in-depth understanding of the field.
+                    Civil engineering is a profession dedicated to improving quality of life by creating and 
+                    maintaining essential infrastructure. Our curriculum emphasizes both practical and theoretical 
+                    knowledge, preparing students to design sustainable buildings, transportation systems, water 
+                    resource systems and environmental solutions.
+                    The department's state-of-the-art laboratories offer hands-on experience in civil engineering 
+                    practices, allowing students to apply classroom knowledge to real-world scenarios and 
+                    fostering innovation and technical proficiency.</p>
+                <p style="font-weight: bold;">Courses offered and Intake:</p>
+                <ul>
+                    <li>Bachelor of Technology (Civil Engineering):60 seats</li>
+                    
+                </ul>
+            </div>
+        </section>
+        <section class="vision-mission">
+            <div class="vision">
+                <h2>Vision</h2>
+                <ul>
+                    <li>To be a premier hub of civil engineering education and research, our department aims to 
+                        cultivate visionary engineers equipped with cutting-edge skills and ethical values. We strive to 
+                        lead in fostering sustainable infrastructure solutions that positively impact society.</li>
+                    
+                </ul>
+            </div>
+            <div class="mission">
+                <h2>Mission</h2>
+                <ul>
+                    <li>Equip students with comprehensive engineering knowledge and diverse skill sets grounded in ethical principles.</li>
+                    <li>Foster a culture of curiosity and encourage innovative, creative, and ethical thinking.</li>
+                    <li>Develop competent professionals and entrepreneurs who embrace responsibility and contribute to societal betterment.</li>
+                    <li>Create an academic environment that supports continuous improvement and prepares students for evolving challenges in civil engineering.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- <section class="specializations">
+            <h2>Specializations</h2>
+            <div class="specialization-container">
+                <div class="specialization">
+                    <img src="images/Data science.webp" alt="Specialization in Data Science">
+                    <p>Specialization in Data Science</p>
+                </div>
+                
+                <div class="specialization">
+                    <img src="images/AI.webp" alt="Specialization in AI & Machine Learning">
+                    <p>Specialization in Artificial Intelligence</p>
+                </div>
+            </div>
+        </section> -->
+        <section class="peos">
+            <div class="peos-content">
+                <h2>PROGRAMME EDUCATIONAL OBJECTIVES (PEOs)</h2>
+                <ul>
+                    <li>
+                        <span class="checkmark">✔</span>
+                        Cultivate civil engineering graduates through a dynamic and adaptable Outcome-Based curriculum, integrating technical, societal, ethical, and environmental considerations.
+
+                    </li>
+                    <li>
+                        <span class="checkmark">✔</span>
+                        Equip graduates with proficiency in applying state-of-the-art technology through continuous enhancement of infrastructure, pedagogical tools, and human resources.
+                    </li>
+                    <li>
+                        <span class="checkmark">✔</span>
+                        Develop skilled civil engineering professionals with a passion for lifelong learning and innovation in Research and Development.
+                    </li>
+                    <li>
+                        <span class="checkmark">✔</span>
+                        Foster civil engineering professionals with a balanced blend of robust technical knowledge, professional values, and ethics, preparing them for employment, entrepreneurship, higher education, and societal service.
+                    </li>
+                </ul>
+            </div>
+            <div class="peos-image">
+                <img src="images/Diploma3.webp" alt="Laptop">
+            </div>
+        </section>
+        
+        <section class="programme-outcome">
+            <h2>PROGRAMME OUTCOMES</h2>
+            <ul>
+                <li>Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.</li>
+                <li>Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences to arrive at substantiated conclusions.</li>
+                <li>Design/Development of solutions: Design solutions for complex civil engineering problems, considering public health, safety, cultural, societal, and environmental factors.</li>
+                <li>Complex Problem Investigations: Utilize research-based knowledge and methods, including experimental design, data analysis, and synthesis, to provide valid conclusions.</li>
+                <li>Modern Tool Usage: Employ appropriate techniques, resources, and modern 
+                    engineering and IT tools, including prediction and modelling, understanding their 
+                    limitations in complex engineering activities.</li>
+                <li>Engineering and Society: Apply contextual knowledge to assess societal, health, 
+                    safety, legal, and cultural issues in professional engineering practice.
+                    </li>
+                <li>Environment and Sustainability: Understand the impact of engineering solutions in 
+                    societal and environmental contexts, demonstrating knowledge of sustainable 
+                    development principles.</li>
+                <li>Ethics: Apply ethical principles and commit to professional ethics and responsibilities in engineering practice.</li>
+                <li>Individual and team work: Function effectively in diverse teams, including leadership roles, and in multidisciplinary settings.</li>
+                <li>Communication: Communicate effectively with the engineering community and 
+                    society through reports, design documentation, presentations, and instructions.</li>
+                <li>Project Management and Finance: Apply engineering and management principles to 
+                    manage projects individually and in teams, including in multidisciplinary 
+                    environments.</li>
+                <li>Lifelong Learning: Recognize the need for and engage in independent and lifelong 
+                    learning in response to technological advancements.</li>
+            </ul>
+        </section>
+        
+        <section class="programme-sf">
+            <h2>Programme Specific Outcome (PSOs)</h2>
+            <ul>
+                <li>Provide safe, economical, and practical solutions to diverse civil engineering problems.</li>
+                <li>Function effectively as a member or leader of technical teams and manage civil 
+                    engineering projects, including those of multidisciplinary nature.</li>
+                <li>Visualize and propose innovative solutions to challenges where existing approaches 
+                    may be inadequate.</li>
+                <li>Demonstrate a commitment to professional ethics, emphasizing quality, timeliness, and 
+                    continuous improvement in engineering practice.</li>
+            </ul>
+        </section>
+        
+        <section class="curriculum">
+            <h2>CURRICULUM</h2>
+            <h3 style="font-size: 20px;">Comming Soon...</h3>
+            <!-- <div class="year-buttons">
+                <button onclick="showSyllabus('first-year')">1st Year</button>
+                <button onclick="showSyllabus('second-year')">2nd Year</button>
+                <button onclick="showSyllabus('third-year')">3rd Year</button>
+                <button onclick="showSyllabus('fourth-year')">4th Year</button>
+            </div>
+            <div class="syllabus" id="first-year">
+                <h3>1st Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>1st Semester</strong> <a href="Syllabus/1st sem Syllabuss of Data Science and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Engineering Mathematics-I</li>
+                        <li>Learning Programming Concept with C</li>
+                        <li> Fundamentals of Computational Biology </li>
+                        <li>Environmental Science</li>
+                        <li>Professional Ethics and Life Skills</li>
+                        <li>Language & Writing Skills</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>2nd Semester</strong> <a href="Syllabus/2nd Sem Syllabus of Ds and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li> Engineering Mathematics-II</li>
+                        <li>Data Structure Using C</li>
+                        <li>Object Oriented Programming</li>
+                        <li>Digital Logic & Design</li>
+                        <li>Python for Data Science</li>
+                        <li>Entrepreneurship</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="second-year" style="display:none;">
+                <h3>2nd Year</h3>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>3rd Semester</strong> <a href="Syllabus/3rd sem syllabus of DS and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Probability and Statistics</li>
+                        <li>Analysis and Design of Algorithm</li>
+                        <li>Computer Organisation and Architecture</li>
+                        <li>Discrete Structure</li>
+                        <li>Database Management System</li>
+                       
+                    </ul>
+                    <ul>
+                        <li><strong>4th Semester</strong> <a href="Syllabus/4th Sem syllabus of DS and AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Computer Network</li>
+                        <li>Artificial Intelligence: Principles & Applications</li>
+                        <li>Operating System</li>
+                        <li>Theory of Computation</li>
+                        <li>R for Data Science</li>
+                        <li>Data Visualisation</li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="third-year" style="display:none;">
+                <h3>3rd Year</h3>
+                <h4>Artificial Intelligence</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>5th Semester</strong> <a href="Syllabus/5th sem syllabus of AI.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Predictive Modelling And Analytics</li>
+                        <li>Cryptography And Network Security</li>
+                        <li>Artificial Neural Networks</li>
+                        <li>Advanced Computer Network</li>
+                        <li>Computational Complexity</li>
+                        <li>Distributed Computing</li>
+                        
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>6th Semester</strong> <a href="path/to/6th_semester_ai.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Mobile Computing</li>
+                        <li>Distributed Systems</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+                <h4>Data Science</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>5th Semester</strong> <a href="Syllabus/5th sem syllabus of DS.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Pattern Recognition And Machine Learning</li>
+                        <li>Intelligent Data Analysis</li>
+                        <li>Cryptography And Network Security</li>
+                        <li>Natural Language Processing</li>
+                        <li>Advanced Computer Network</li>
+                        <li>Computational Complexity</li>
+                        <li>Distributed Computing</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>6th Semester</strong> <a href="path/to/6th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Data Visualization</li>
+                        <li>Cloud Computing</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus" id="fourth-year" style="display:none;">
+                <h3>4th Year</h3>
+                <h4>Artificial Intelligence</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>7th Semester</strong> <a href="path/to/7th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Artificial Intelligence</li>
+                        <li>Compiler Design</li>
+                        <li>Web Technologies</li>
+                        <li>Elective-I</li>
+                        <li>Elective-II</li>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>8th Semester</strong> <a href="path/to/8th_semester_ds.pdf" class="download-btn" target="_blank">View PDF</a></li>
+                        <li>Machine Learning</li>
+                        <li>Mobile Computing</li>
+                        <li>Distributed Systems</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        
+                    </ul>
+                </div>
+                <h4>Data Science</h4>
+                <div class="semesters">
+                    <ul>
+                        <li><strong>7th Semester</strong></li>
+                        <li>Data Mining</li>
+                        <li>Big Data Analytics</li>
+                        <li>Web Technologies</li>
+                        <li>Elective-I</li>
+                        <li>Elective-II</li>
+                        <li><a href="pdfs/3rd_year_AI_5th_semester.pdf" class="download-button" download>Download</a></li>
+                    </ul>
+                    <ul>
+                        <li><strong>8th Semester</strong></li>
+                        <li>Machine Learning</li>
+                        <li>Data Visualization</li>
+                        <li>Cloud Computing</li>
+                        <li>Elective-III</li>
+                        <li>Elective-IV</li>
+                        <li><a href="pdfs/3rd_year_AI_5th_semester.pdf" class="download-button" download>Download</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="scheme"><strong>B.Tech in Civil Engineering  
+                Scheme: </strong> <a href="Scheme/AI SCHEME.pdf" class="download-btn" target="_blank">View PDF</a></p> -->
+        </section>
+        <section class="eligibility-criteria">
+            <h2>ELIGIBILITY CRITERIA</h2>
+            <p>Duration: 4 yrs. The Candidates should have passed Senior Secondary (10+2) or an equivalent Examination in five subjects taken together including compulsory subjects of Physics, Mathematics and one subject of Chemistry/ Biotechnology/ Biology/ Computer Science & English with 60% marks in aggregate (40% marks in the case of SC/ ST Category). Or Passed Diploma examination with at least 60% marks (40% in case of candidates belonging to reserved category), subject to vacancies in the First Year, in case the vacancies at lateral entry are exhausted.</p>
+        </section>
+        <section class="fee-structure">
+            <h2>FEE STRUCTURE</h2>
+            <div class="fee-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Semester</th>
+                            <th>Description</th>
+                            <th>Amount (INR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="13" style="font-weight: bold;">1st Semester</td>
+                            <td>Tuition Fee</td>
+                            <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
+                            <td>700.00</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Caution Money</td>
+                            <td>3,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Enrolment Fee</td>
+                            <td>2,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Identity Card</td>
+                            <td>300.00</td>
+                        </tr>
+                        <tr>
+                            <td>Admission Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grand Total</strong></td>
+                            <td><strong>57,563.00</strong></td>
+                        </tr>
+                        
+                        </tbody>
+                        </table>
+                        <button class="view-btn" onclick="toggleFeeTable()">View Fee Structure of 2nd to 8th Semester</button>
+                    </div>
+                    <div class="fee-table" id="second-semester-fees" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semester</th>
+                                    <th>Description</th>
+                                    <th>Amount (INR)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <tr>
+                            <td rowspan="8" style="font-weight: bold;">2nd Semester</td>
+                            <td>Tuition Fee</td>
+                            <td>45,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Training and Placement</td>
+                            <td>700.00</td>
+                        </tr>
+                        <tr>
+                            <td>Laboratory Fee</td>
+                            <td>2,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Examination Fee</td>
+                            <td>563.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sport Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Library Fee</td>
+                            <td>500.00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>51,263.00</strong></td>
+                        </tr>
+                        <!-- Add more rows as needed for other semesters -->
+                    </tbody>
+                </table>
+            
+            <p class="note"><strong>NOTE:</strong> From 2nd semester to 8th semester fee will be the same. The fees mentioned above are approximate figures and are subject to change.</p>
+            </div>
+            
+        </section>
+        <section class="message">
+            <h3>Message by Head of Department:</h3>
+            <p>
+                Welcome to the Department of Civil Engineering at UTD, CSVTU Bhilai. We are dedicated 
+                    to preparing you for success in our ever-changing world. Our goal is to cultivate globally 
+                    competent civil engineers who blend advanced technology with ethical values. With our 
+                    committed faculty and state-of-the-art labs, we aim to develop your technical skills and nurture 
+                    your personal integrity. Wishing you all a bright and fulfilling future ahead.
+            </p>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><img src="images/facebook logo Background Removed.png" alt="Facebook"></a>
+                    <br>
+                    <a href="#"><img src="images/twitter-x-logo.png" alt="Twitter"></a>
+                    <br>
+                    <a href="#"><img src="images/mail.png" alt="Mail"></a>
+                </div>
+            </div>
+            <p>&copy; 2024 University Teaching Department (CSVTU). All Rights Reserved.</p>
+            <p>Contact us at enquiry@csvtu.ac.in</p>
+        </footer>
+    
+    </main>
+    <script>
+        function showSyllabus(year) {
+    const years = ['first-year', 'second-year', 'third-year', 'fourth-year'];
+    years.forEach(y => {
+        document.getElementById(y).style.display = 'none';
+    });
+    document.getElementById(year).style.display = 'block';
+}
+
+// Display the first year syllabus by default
+document.addEventListener('DOMContentLoaded', (event) => {
+    showSyllabus('first-year');
+});
+function toggleFeeTable() {
+    var secondSemesterFees = document.getElementById("second-semester-fees");
+    if (secondSemesterFees.style.display === "none") {
+        secondSemesterFees.style.display = "block";
+    } else {
+        secondSemesterFees.style.display = "none";
+    }
+}
+
+    </script>
+</body>
+</html>
