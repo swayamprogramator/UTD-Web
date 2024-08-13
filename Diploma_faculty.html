@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculties</title>
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+   
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 5px;
+   background-color: #fff;
+   border-bottom: 1px solid #ccc;
+   
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   margin-left:10px;
+}
+.logo h3 {
+   font-size: medium;
+}
+
+.logo img {
+   width: 80px;
+   height: 70px;
+   margin-right: 10px;
+}
+/* Reset some default browser styles */
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Flexbox container for horizontal alignment */
+nav ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   background-color: #fff;
+   /* border-bottom: 1px solid #ccc; */
+}
+
+/* Style each list item */
+nav ul li {
+   position: relative;
+}
+
+/* Style for navigation links */
+nav ul li a {
+   display: block;
+   padding: 15px 40px;
+   text-decoration: none;
+   color: #000;
+   font-weight: bold;
+   transition: background-color 0.5s;
+}
+
+nav ul li a:hover {
+   background-color: #f9f9f9;
+}
+
+/* Dropdown container */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+   transition: background-color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+   background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Add some hover effects for main navigation links */
+nav ul li a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #000;
+   bottom: -5px;
+   left: 0;
+   transform: scaleX(0);
+   transition: transform 0.5s ease;
+}
+
+nav ul li a:hover::after {
+   transform: scaleX(1);
+}
+
+        /* Additional styles for faculty cards and view more button */
+        .faculty-section {
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .faculty-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #010314;
+        }
+
+        .faculty-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .faculty-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card img {
+            width: 100%;
+            height:350px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .faculty-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #011731;
+            padding-bottom: 10px;
+        }
+
+        .faculty-card p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .view-more-btn {
+            background-color: #011731;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .view-more-btn:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/csvtu logo.png" alt="Chhattisgarh Swami Vivekanand Technical University">
+            <h3>Chhattisgarh Swami Vivekanand<br/>Technical University</h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="add_ug.html">Admissions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Faculty</a>
+                    <div class="dropdown-content">
+                        <a href="Btech_faculty.html">Btech's Faculties</a>
+                        <a href="Diploma_faculty.html">Diploma's Faculties</a>
+                        <a href="PG_faculty.html">PG's Faculties</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="menu.html" id="menu-link">Menu</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+        <!-- Faculty sections with view more buttons -->
+    <section class="faculty-section">
+        <h1>Diploma in Industrial and Fire Safety Engineering</h1>
+        <div class="faculty-container" id="btech-faculty-container">
+            <!-- Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Dr.%20Vikrant%20Dongrey%201.jpg" alt="Dr. VIKRANT DONGRE">
+                <h3>Dr. VIKRANT DONGRE</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: Ph.D</p>
+                <p>Contact No: +91-7999803843  </p>
+                <p>E-mail: faculty3_isfs@csvtu.ac.in</p>
+                <p>Specialization: Supply chain management,Value engineering,Six Sigma, TPM </p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/krishana%20kant%20tripathi1.jpg" alt="Mr. KRISHNAKANT TRIPATHI">
+                <h3>Mr. KRISHNAKANT TRIPATHI</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications: M.Tech Industrial Safety</p>
+                <p>Contact No: +91-8299036180  </p>
+                <p>E-mail: faculty4_isfs@csvtu.ac.in</p>
+                <p>Specialization: Accident investigation and data analysis of past accidents</p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Smita%20Rani%20Bhardiya1.jpg" alt="Dr. SMITA RANI BHARDIYA">
+                <h3>Dr. SMITA RANI BHARDIYA</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: Ph.D</p>
+                <p>Contact No: +91-9174452014  </p>
+                <p>E-mail: smitarani1990@gmail.com</p>
+                <p>Specialization: Sensors and electrochemical synthesis carbon-based nanomaterials</p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Rahul-Baghel%20-%20rahul%20baghel1.jpg" alt="Mr. RAHUL BAGHEL">
+                <h3>Mr. RAHUL BAGHEL</h3>
+                <p>Assistant Professor</p>
+                <p>Qualifications:  PhD(Pursuing), PGDINDS, CAE (Certified Automation Engineer), B.E, MTech  </p>
+                <p>Contact No: +91-9826753662 </p>
+                <p>E-mail: rahulbaghel18@gmail.com</p>
+                <p>Specialization: Material Modelling, Industrial Safety, PLC/SCADA, Block Coding Robotics, Solar Cell</p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Mukesh%20-%20Mukesh%20Sen%20CSVTU.jpg" alt="Mr. MUKESH SEN">
+                <h3>Mr. MUKESH SEN</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: B.E.</p>
+                <p>Contact No: +91-7747964791 </p>
+                <p>E-mail: faculty1_isfs@csvtu.ac.in</p>
+                <p>Specialization: ---</p>
+            </div>
+        </div>
+        <button class="view-more-btn" id="btech-view-more-btn">View More</button>
+    </section>
+
+    <section class="faculty-section">
+        <h1>Mining Engineering</h1>
+        <div class="faculty-container" id="diploma-faculty-container">
+            <!-- Diploma Faculty cards will be inserted here by HTML -->
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Govinda%20Gahine%20Csvtu%20Bhilai.jpeg" alt="Mr. GOVINDA GAHINE">
+                <h3>Mr. GOVINDA GAHINE</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: B.E.</p>
+                <p>Contact No: +91-8103392280 </p>
+                <p>E-mail:  faculty1.min@csvtu.ac.in</p>
+                <p>Specialization: ---</p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Himanshu%20Sahu%20Csvtu%20Bhilai.jpeg" alt="Mr. HIMANSHU SAHU">
+                <h3>Mr. HIMANSHU SAHU</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: B.Tech</p>
+                <p>Contact No: +91-9340409436  </p>
+                <p>E-mail: abhinawjagtap.cse@csvtu.ac.in</p>
+                <p>Specialization: --- </p>
+            </div>
+            <div class="faculty-card">
+                <img src="http://www.csvtu.ac.in/ew/wp-content/uploads/2019/05/Rajat%20Tiwari%20Csvtu%20Bhilai.jpg" alt="Mr. RAJAT TIWARI">
+                <h3>Mr. RAJAT TIWARI</h3>
+                <p>Lecturer</p>
+                <p>Qualifications: M.Tech(Transportation Engineering), B.E.(Civil Engineering)</p>
+                <p>Contact No: +91-7558663545  </p>
+                <p>E-mail: faculty1.civil@csvtu.ac.in</p>
+                <p>Specialization: Transportation Engineering, Geotechnical Engineering and Irrigation Engineering</p>
+            </div>
+        </div>
+        <button class="view-more-btn" id="diploma-view-more-btn">View More</button>
+    </section>
+    
+    <script>
+        // JavaScript logic for "View More" button
+        const facultiesPerPage = 4;
+
+        function handleViewMore(section) {
+            const container = document.getElementById(`${section}-faculty-container`);
+            const facultyCards = container.querySelectorAll('.faculty-card');
+            const viewMoreBtn = document.getElementById(`${section}-view-more-btn`);
+
+            let visibleCount = facultiesPerPage;
+            facultyCards.forEach((card, index) => {
+                if (index < visibleCount) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            viewMoreBtn.addEventListener('click', () => {
+                visibleCount += facultiesPerPage;
+                facultyCards.forEach((card, index) => {
+                    if (index < visibleCount) {
+                        card.style.display = 'block';
+                    }
+
+                    if (visibleCount >= facultyCards.length) {
+                        viewMoreBtn.style.display = 'none';
+                    }
+                });
+            });
+
+            // Initial setup
+            if (facultyCards.length <= facultiesPerPage) {
+                viewMoreBtn.style.display = 'none';
+            }
+        }
+
+        handleViewMore('btech');
+        handleViewMore('diploma');
+        // Add more sections as needed
+
+    </script>
+</body>
+</html>
